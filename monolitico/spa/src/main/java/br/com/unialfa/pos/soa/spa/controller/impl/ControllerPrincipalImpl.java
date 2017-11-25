@@ -1,10 +1,15 @@
 package br.com.unialfa.pos.soa.spa.controller.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,6 +19,7 @@ import br.com.unialfa.pos.soa.spa.core.model.entity.Tarefa;
 import br.com.unialfa.pos.soa.spa.core.model.entity.Usuario;
 import br.com.unialfa.pos.soa.spa.core.model.entity.UsuarioTarefa;
 import br.com.unialfa.pos.soa.spa.core.to.UsuarioTarefaTo;
+import br.com.unialfa.pos.soa.spa.helper.Constante;
 import br.com.unialfa.pos.soa.spa.service.TarefaService;
 import br.com.unialfa.pos.soa.spa.service.UsuarioService;
 
@@ -25,6 +31,13 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 
 	@Autowired
 	TarefaService tarefaService;
+	
+	String destino = Constante.USUARIOS;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+	    binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true));
+	}
 
 	private void carregaObjetosDaTela(ModelAndView mv, Boolean limpaForms) {
 
@@ -35,13 +48,9 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 		}
 
 		List<Usuario> users = this.usuarioService.obtemTodosOsUsuarios();
-		// List<Usuario> users = users.stream().map(u -> new
-		// Usuario(u)).collect(Collectors.toList());
 		mv.addObject("usuarios", users);
 
 		List<Tarefa> tasks = this.tarefaService.obtemTodasAsTarefas();
-		// List<Tarefa> tasks = tasks.stream().map(t -> new
-		// Tarefa(t)).collect(Collectors.toList());
 		mv.addObject("tarefas", tasks);
 
 	}
@@ -55,19 +64,13 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 		}
 
 		List<Usuario> users = this.usuarioService.obtemTodosOsUsuarios();
-		// List<Usuario> users = users.stream().map(u -> new
-		// Usuario(u)).collect(Collectors.toList());
 		mv.addObject("usuarios", users);
 
 		List<Tarefa> tasks = this.tarefaService.obtemTodasAsTarefas();
-		// List<Tarefa> tasks = tasks.stream().map(t -> new
-		// Tarefa(t)).collect(Collectors.toList());
 		mv.addObject("tarefas", tasks);
 
 		if (idTarefaSelecionada != null) {
 			List<UsuarioTarefa> uts = this.tarefaService.obtemTodasAsAlocacoes(idTarefaSelecionada);
-			// List<UsuarioTarefa> uts = uts.stream().map(ut ->
-			// ut)).collect(Collectors.toList());
 			mv.addObject("usuariosTarefas", uts);
 		}
 	}
@@ -78,7 +81,7 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 
 		this.carregaObjetosDaTela(mv, true);
 
-		mv.addObject("abaAtiva", "usuarios");
+		mv.addObject("abaAtiva", this.destino);
 
 		return mv;
 	}
@@ -91,6 +94,8 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		this.destino = Constante.USUARIOS;
 
 		return "redirect:/spa";
 	}
@@ -98,6 +103,8 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 	@Override
 	public String spaDeleteUser(@PathVariable("id") Long id) {
 		this.usuarioService.removeUsuario(id);
+		
+		this.destino = Constante.USUARIOS;
 
 		return "redirect:/spa";
 	}
@@ -110,17 +117,18 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 		mv.addObject("usuario", usuario);
 
 		mv.addObject("tarefa", new Tarefa());
+		
+		mv.addObject("usuarioTarefa", new UsuarioTarefaTo());
 
 		this.carregaObjetosDaTela(mv, false);
 
-		mv.addObject("abaAtiva", "usuarios");
+		mv.addObject("abaAtiva", Constante.USUARIOS);
 
 		return mv;
 	}
 
 	@Override
-	public ModelAndView spaAddTarefa(@ModelAttribute Tarefa tarefa) {
-		ModelAndView mv = new ModelAndView("spa");
+	public String spaAddTarefa(@ModelAttribute Tarefa tarefa) {
 
 		try {
 			this.tarefaService.gravaTarefa(tarefa);
@@ -128,35 +136,23 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 			e.printStackTrace();
 		}
 
-		this.carregaObjetosDaTela(mv, true);
+		this.destino = Constante.TAREFAS;
 
-		mv.addObject("abaAtiva", "tarefas");
-
-		return mv;
+		return "redirect:/spa";
 	}
 
-	// @InitBinder
-	// public void initBinder(WebDataBinder binder) {
-	// CustomDateEditor editor = new CustomDateEditor(new
-	// SimpleDateFormat("yyyy-MM-dd"), true);
-	// binder.registerCustomEditor(Date.class, editor);
-	// }
-
 	@Override
-	public ModelAndView spaDeleteTarefa(@PathVariable("id") Long id) {
-		ModelAndView mv = new ModelAndView("spa");
+	public String spaDeleteTarefa(@PathVariable("id") Long id) {
 
 		try {
 			this.tarefaService.removeTarefa(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		this.destino = Constante.TAREFAS;
 
-		this.carregaObjetosDaTela(mv, true);
-
-		mv.addObject("abaAtiva", "tarefas");
-
-		return mv;
+		return "redirect:/spa";
 	}
 
 	@Override
@@ -172,7 +168,7 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 
 		this.carregaObjetosDaTela(mv, false);
 
-		mv.addObject("abaAtiva", "tarefas");
+		mv.addObject("abaAtiva", Constante.TAREFAS);
 
 		return mv;
 	}
@@ -193,7 +189,9 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 		to.setIdTarefa(ut.getTarefa().getId());
 		mv.addObject("usuarioTarefa", to);
 
-		mv.addObject("abaAtiva", "tarefas-alocadas");
+		mv.addObject("abaAtiva", Constante.TAREFAS_ALOCADAS);
+		
+		this.destino = Constante.TAREFAS_ALOCADAS;
 
 		return mv;
 	}
@@ -214,7 +212,9 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 		to.setIdTarefa(ut.getTarefa().getId());
 		mv.addObject("usuarioTarefa", to);
 
-		mv.addObject("abaAtiva", "tarefas-alocadas");
+		mv.addObject("abaAtiva", Constante.TAREFAS_ALOCADAS);
+		
+		this.destino = Constante.TAREFAS_ALOCADAS;
 
 		return mv;
 	}
@@ -228,7 +228,9 @@ public class ControllerPrincipalImpl implements ControllerPrincipal {
 		UsuarioTarefaTo to = new UsuarioTarefaTo();
 		to.setIdTarefa(idTarefa);
 		mv.addObject("usuarioTarefa", to);
-		mv.addObject("abaAtiva", "tarefas-alocadas");
+		mv.addObject("abaAtiva", Constante.TAREFAS_ALOCADAS);
+		
+		this.destino = Constante.TAREFAS_ALOCADAS;
 
 		return mv;
 	}

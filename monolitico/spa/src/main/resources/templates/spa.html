@@ -12,7 +12,6 @@
 
 </head>
 <body>
-	<input type="hidden" id="usuarioDaSessao" th:value="${usuarioDaSessao}" />
 	<nav class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
@@ -52,7 +51,7 @@
 				<div style="margin-top: 10px;">
 					<form action="#" th:action="@{/spa/add-user}"
 						th:object="${usuario}" method="post">
-						<input type="hidden" th:field="*{id}" />
+						<input type="hidden" id="idUsuarioParaEdicao" th:field="*{id}" />
 						<div class="form-group">
 							<label for="usuarioInputNome">Nome</label> <input type="text"
 								class="form-control" id="usuarioInputNome" placeholder="Nome"
@@ -65,7 +64,8 @@
 								th:field="*{email}" autocomplete="off" />
 						</div>
 
-						<button type="submit" class="btn btn-primary">Adicionar</button>
+						<button id="idBtnAdicionarUsuario" type="submit"
+							class="btn btn-primary">Adicionar</button>
 					</form>
 
 					<hr />
@@ -99,7 +99,7 @@
 				<div style="margin-top: 10px;">
 					<form action="#" th:action="@{/spa/add-tarefa}"
 						th:object="${tarefa}" method="post">
-						<input type="hidden" th:field="*{id}" />
+						<input type="hidden" id="idTarefaParaEdicao" th:field="*{id}" />
 						<div class="form-group">
 							<label for="tarefaInputTitulo">Título</label> <input type="text"
 								class="form-control" id="tarefaInputTitulo" placeholder="Título"
@@ -131,7 +131,8 @@
 
 
 
-						<button type="submit" class="btn btn-primary">Adicionar</button>
+						<button id="idBtnAdicionarTarefa" type="submit"
+							class="btn btn-primary">Adicionar</button>
 					</form>
 
 					<hr />
@@ -167,7 +168,7 @@
 						<input type="hidden" th:field="*{id}" />
 						<div class="form-group">
 							<label for="usuarioTarefaTarefaSelect">Título</label> <select
-								id="usuarioTarefaTarefaSelect"
+								class="form-control" id="usuarioTarefaTarefaSelect"
 								th:field="${usuarioTarefa.idTarefa}">
 								<option th:each="t : ${tarefas}" th:value="${t.id}"
 									th:text="${t.titulo}">Tarefa</option>
@@ -176,7 +177,8 @@
 
 						<div class="form-group">
 							<label for="usuarioTarefaUsuarioSelect">Usuário</label> <select
-								id="usuarioTarefaUsuarioSelect" th:field="${usuarioTarefa.idUsuario}">
+								class="form-control" id="usuarioTarefaUsuarioSelect"
+								th:field="${usuarioTarefa.idUsuario}">
 								<option th:each="u : ${usuarios}" th:value="${u.id}"
 									th:text="${u.nome}">Tarefa</option>
 							</select>
@@ -226,6 +228,24 @@
 
 	<script>
 		$(function() {
+			
+			const $idUsuarioParaEdicao = $('#idUsuarioParaEdicao');
+			const $idBtnAdicionarUsuario = $('#idBtnAdicionarUsuario');
+			
+			if(!!$idUsuarioParaEdicao.val()) {
+				$idBtnAdicionarUsuario.text('Gravar');
+			} else {
+				$idBtnAdicionarUsuario.text('Adicionar');
+			}
+			
+			const $idTarefaParaEdicao = $('#idTarefaParaEdicao');
+			const $idBtnAdicionarTarefa = $('#idBtnAdicionarTarefa');
+			
+			if(!!$idTarefaParaEdicao.val()) {
+				$idBtnAdicionarTarefa.text('Gravar');
+			} else {
+				$idBtnAdicionarTarefa.text('Adicionar');
+			}
 
 			const $usuarioTarefaTarefaSelect = $('#usuarioTarefaTarefaSelect');
 			

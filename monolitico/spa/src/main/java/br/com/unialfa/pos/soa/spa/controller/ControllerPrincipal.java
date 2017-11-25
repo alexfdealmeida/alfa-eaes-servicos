@@ -26,10 +26,10 @@ public interface ControllerPrincipal {
 	public ModelAndView spaEditUser(@PathVariable("id") Long id);
 	
 	@PostMapping("/spa/add-tarefa")
-	public ModelAndView spaAddTarefa(@ModelAttribute Tarefa tarefa);
+	public String spaAddTarefa(@ModelAttribute Tarefa tarefa);
 	
 	@GetMapping("/spa/delete-tarefa/{id}")
-	public ModelAndView spaDeleteTarefa(@PathVariable("id") Long id);
+	public String spaDeleteTarefa(@PathVariable("id") Long id);
 	
 	@GetMapping("/spa/edit-tarefa/{id}")
 	public ModelAndView spaEditTarefa(@PathVariable("id") Long id);
