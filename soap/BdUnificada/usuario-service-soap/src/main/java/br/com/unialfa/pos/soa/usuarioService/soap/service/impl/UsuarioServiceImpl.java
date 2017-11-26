@@ -1,4 +1,4 @@
-package br.com.unialfa.pos.soa.spa.service.impl;
+package br.com.unialfa.pos.soa.usuarioService.soap.service.impl;
 
 import java.util.List;
 
@@ -6,23 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.unialfa.pos.soa.spa.core.model.entity.Comentario;
-import br.com.unialfa.pos.soa.spa.core.model.entity.Usuario;
-import br.com.unialfa.pos.soa.spa.core.model.entity.UsuarioTarefa;
-import br.com.unialfa.pos.soa.spa.core.model.repository.ComentarioRepository;
-import br.com.unialfa.pos.soa.spa.core.model.repository.UsuarioRepository;
-import br.com.unialfa.pos.soa.spa.core.model.repository.UsuarioTarefaRepository;
-import br.com.unialfa.pos.soa.spa.core.soap.UsuariosSoapClient;
-import br.com.unialfa.pos.soa.spa.service.UsuarioService;
+import br.com.unialfa.pos.soa.usuarioService.soap.core.model.entity.Comentario;
+import br.com.unialfa.pos.soa.usuarioService.soap.core.model.entity.Usuario;
+import br.com.unialfa.pos.soa.usuarioService.soap.core.model.entity.UsuarioTarefa;
+import br.com.unialfa.pos.soa.usuarioService.soap.core.model.repository.ComentarioRepository;
+import br.com.unialfa.pos.soa.usuarioService.soap.core.model.repository.UsuarioRepository;
+import br.com.unialfa.pos.soa.usuarioService.soap.core.model.repository.UsuarioTarefaRepository;
+import br.com.unialfa.pos.soa.usuarioService.soap.service.UsuarioService;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
 	@Autowired
 	UsuarioRepository usuarioRepository;
-	
-	@Autowired
-	UsuariosSoapClient usuariosSoapClient;
 
 	@Autowired
 	UsuarioTarefaRepository usuarioTarefaRepository;
@@ -61,9 +57,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public Usuario obtemUsuarioPorId(Long id) {
-//		Usuario usuario = this.usuarioRepository.findOne(id);
-		
-		Usuario usuario = this.usuariosSoapClient.findOne(id);
+		Usuario usuario = this.usuarioRepository.findOne(id);
 		return usuario;
 	}
 

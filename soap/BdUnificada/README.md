@@ -5,10 +5,13 @@ Existem 2 projetos nesta área:
 - Sistema monolítico modificado
 - Serviço de Usuários
 
+A abordagem do SOAP usada aqui foi a _Contract First_ ("O contrato é mais importante")
+
 ## Estrutura do Projetos
 
 ### SPA
 
+- Referência: [Documentação do Spring](https://spring.io/guides/gs/consuming-web-service/)
 - Banco de Dados: MySql
     - O Banco é gerado inteiramente pela aplicação. Para isso é preciso que exista, no banco, 
 	um usuário "pos", com a senha 123456, com permissão suficiente para realizar operações de 

@@ -1,4 +1,4 @@
-package monolitico.pos.unialfa.com.br;
+package br.com.unialfa.pos.soa.usuarioService.soap;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

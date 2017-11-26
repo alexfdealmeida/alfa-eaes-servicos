@@ -1,0 +1,46 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://soa.pos.unialfa.com.br/soap/usuario-web-service"
+	targetNamespace="http://soa.pos.unialfa.com.br/soap/usuario-web-service"
+	elementFormDefault="qualified">
+
+	<xs:element name="getUsuariosByPartOfNameRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nome" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getUsuariosByPartOfNameResponse">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="usuarios" type="tns:usuario" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="getUsuarioByIdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getUsuarioByIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuario" type="tns:usuario" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="usuario">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="nome" type="xs:string" />
+			<xs:element name="email" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
