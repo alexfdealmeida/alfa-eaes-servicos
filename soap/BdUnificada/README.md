@@ -3,7 +3,14 @@
 Existem 2 projetos nesta área:
 
 - Sistema monolítico modificado
+    - O SPA foi aqui modificado para solicitar o usuário usando o seu id por meio de um serviço.
+    Essa requisição é feita quando o cliente clica no icone do lapis para editar o usuario.
 - Serviço de Usuários
+    - Foram disponibilizados 2 serviços no projeto:
+        - **Um para demonstração**: obtém usuários por parte do nome. Este serviço não está sendo 
+	usado no cliente. Ele apenas solicita todos os usuários cujo nome possuem o token
+	"an" e os escreve no console
+	    - **Outro para uso do cliente**: obtém um usuário por id
 
 A abordagem do SOAP usada aqui foi a _Contract First_ ("O contrato é mais importante")
 
