@@ -6,14 +6,20 @@ Existem 2 projetos nesta área:
     - O SPA foi aqui modificado para solicitar o usuário usando o seu id por meio de um serviço.
     Essa requisição é feita quando o cliente clica no icone do lapis para editar o usuario.
 - Serviço de Usuários
-    - Foram disponibilizados 2 serviços no projeto:
-        - **Um para demonstração**: obtém usuários por parte do nome. Este serviço não está sendo 
-	usado no cliente. Ele apenas solicita todos os usuários cujo nome possuem o token
-	"an" e os escreve no console
+    - Foi disponibilizado 1 serviço no projeto, com 3 operações:
+        - **1 para demonstração**: obtenção dos usuários por parte do nome. Esta operação não está 
+	sendo usada no cliente. Ela apenas solicita todos os usuários cujo nome possuem o token
+	"an" e os escreve no console do cliente
 	
-	    - **Outro para uso do cliente**: obtém um usuário por id
+	    - **1 para uso do cliente, relativo a usuários**: obtém um usuário por id
+	    
+	    - **1 pra usdo do cliente, relativo à tarefas**: inicialmente a ideia era conter somente
+	    serviços de usuários no sistema. Porém, para o bem do entendimento, foi incluída também
+	    uma operação que obtém todas as tarefas
 
-A abordagem do SOAP usada aqui foi a _Contract First_ ("O contrato é mais importante")
+A abordagem do SOAP usada aqui foi a _Contract First_ ("O contrato é mais importante"): o que é feito
+pelo desenvolvedor é concentrar esforços no desenovolvimento dos arquivos `.xsd` e deixar a geração
+das classes de transporte para plugins do maven.
 
 ## Estrutura do Projetos
 
