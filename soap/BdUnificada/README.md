@@ -10,6 +10,7 @@ Existem 2 projetos nesta área:
         - **Um para demonstração**: obtém usuários por parte do nome. Este serviço não está sendo 
 	usado no cliente. Ele apenas solicita todos os usuários cujo nome possuem o token
 	"an" e os escreve no console
+	
 	    - **Outro para uso do cliente**: obtém um usuário por id
 
 A abordagem do SOAP usada aqui foi a _Contract First_ ("O contrato é mais importante")
@@ -42,3 +43,81 @@ a parte de segurança, como o Spring Security.
     - Usamos aqui o framework Spring, em sua distribuição já empacotada: Springboot + JPA
 - Framework de segurança: Por simplicidade do projeto não está sendo usado nenhum framework para
 a parte de segurança, como o Spring Security.
+
+
+## Observações Importantes
+ 
+- Em ambos os projetos estamos usando um plugin do Maven (conforme orientação da documentação do Spring) para a geração das classes usadas na transmissão e recebimento das mensagens SOAP: 
+    - Servidor: [JAXB2](http://www.mojohaus.org/jaxb2-maven-plugin/Documentation/v2.2/index.html)
+    - Cliente: [JAXB2](https://github.com/highsource/maven-jaxb2-plugin)
+    
+- O JAXB2 basicamente gera classes java a partir de arquivos XML
+    
+```xml
+<!-- plugin do Maven do lado do servidor -->
+<plugin>
+   <groupId>org.codehaus.mojo</groupId>
+   <artifactId>jaxb2-maven-plugin</artifactId>
+   <version>1.6</version>
+   <executions>
+      <execution>
+         <id>xjc</id>
+         <goals>
+            <goal>xjc</goal>
+         </goals>
+      </execution>
+   </executions>
+   <configuration>
+      <!-- Pasta onde ficará os arquivos .xsd -->
+      <schemaDirectory>${project.basedir}/src/main/resources/schemas/</schemaDirectory>
+	
+      <!-- Pasta onde serão geradas as classes -->
+      <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+      <clearOutputDir>false</clearOutputDir>
+      
+      <!-- Arquivo que será processado -->
+      <schemaFiles>main.xsd</schemaFiles>
+   </configuration>
+</plugin>
+```
+
+```xml
+<!-- plugin do Maven do lado do cliente -->
+<plugin>
+   <groupId>org.jvnet.jaxb2.maven2</groupId>
+   <artifactId>maven-jaxb2-plugin</artifactId>
+   <version>0.12.3</version>
+   <executions>
+      <execution>
+         <goals>
+            <goal>generate</goal>
+         </goals>
+      </execution>
+   </executions>
+   <configuration>
+      <schemaLanguage>WSDL</schemaLanguage>
+      <!-- arquivo xml que será gerado a partir do serviço descrito pelos servidor -->
+      <generatePackage>servicos.wsdl</generatePackage>
+      <schemas>
+         <schema>
+	    <!-- Endereço do servidor onde conseguir o a descrição do serviço -->
+            <url>http://localhost:9000/ws/service.wsdl</url>
+         </schema>
+      </schemas>
+   </configuration>
+</plugin>
+```
+
+- Além disso, no servidor, também é preciso incluir uma dependência que possibilita o uso da tag
+`<xs:include />` para a compilação de um arquivo único contendo as definições de cada serviço
+oferecido:
+
+```xml
+<dependency>
+   <groupId>org.apache.ws.xmlschema</groupId>
+   <artifactId>xmlschema-core</artifactId>
+   <version>2.2.2</version>
+</dependency>
+```
+
+
