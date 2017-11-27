@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @Configuration
-public class UsuarioConfiguration {
+public class ServiceConfiguration {
 
 	@Bean
 	public Jaxb2Marshaller marshaller() {
@@ -19,7 +19,16 @@ public class UsuarioConfiguration {
 	@Bean
 	public UsuariosSoapClient usuariosSoapClient(Jaxb2Marshaller marshaller) {
 		UsuariosSoapClient client = new UsuariosSoapClient();
-		client.setDefaultUri("http://localhost:9000/ws/usuarios");
+		client.setDefaultUri("http://localhost:9000/ws/service");
+		client.setMarshaller(marshaller);
+		client.setUnmarshaller(marshaller);
+		return client;
+	}
+	
+	@Bean
+	public TarefasSoapClient tarefasSoapClient(Jaxb2Marshaller marshaller) {
+		TarefasSoapClient client = new TarefasSoapClient();
+		client.setDefaultUri("http://localhost:9000/ws/service");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
 		return client;

@@ -22,6 +22,7 @@ public class SpaApplication {
 
 			GetUsuariosByPartOfNameResponse response = usuariosSoapClient.getUsuariosByPartOfName(parteDoNome);
 			response.getUsuarios().forEach(u -> System.err.println(u.getNome()));
+			
 		};
 	}
 }

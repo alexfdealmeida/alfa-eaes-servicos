@@ -1,0 +1,10 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://soa.pos.unialfa.com.br/soap/web-service"
+	targetNamespace="http://soa.pos.unialfa.com.br/soap/web-service"
+	elementFormDefault="qualified">
+
+	<!-- Including some definitions from another schema in the same location -->
+	<xs:include schemaLocation="includes/usuarios.xsd" />
+	<xs:include schemaLocation="includes/tarefas.xsd" />
+
+</xs:schema>

@@ -101,7 +101,7 @@
                     <generatePackage>servicos.wsdl</generatePackage>
                     <schemas>
                         <schema>
-                            <url>http://localhost:9000/ws/usuarios.wsdl</url>
+                            <url>http://localhost:9000/ws/service.wsdl</url>
                         </schema>
                     </schemas>
                 </configuration>

@@ -2,15 +2,14 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.7 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2017.11.26 às 06:38:21 PM BRST 
+// Gerado em: 2017.11.27 às 02:56:59 PM BRST 
 //
 
 
-package br.com.unialfa.pos.soa.soap.usuario_web_service;
+package br.com.unialfa.pos.soa.soap.web_service;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="nome" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +35,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "nome"
+    "id"
 })
-@XmlRootElement(name = "getUsuariosByPartOfNameRequest")
-public class GetUsuariosByPartOfNameRequest {
+@XmlRootElement(name = "getUsuarioByIdRequest")
+public class GetUsuarioByIdRequest {
 
-    @XmlElement(required = true)
-    protected String nome;
+    protected long id;
 
     /**
-     * Obtém o valor da propriedade nome.
+     * Obtém o valor da propriedade id.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getNome() {
-        return nome;
+    public long getId() {
+        return id;
     }
 
     /**
-     * Define o valor da propriedade nome.
+     * Define o valor da propriedade id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setNome(String value) {
-        this.nome = value;
+    public void setId(long value) {
+        this.id = value;
     }
 
 }

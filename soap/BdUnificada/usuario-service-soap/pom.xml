@@ -63,6 +63,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.ws.xmlschema</groupId>
+			<artifactId>xmlschema-core</artifactId>
+			<version>2.2.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -88,6 +93,9 @@
 					<schemaDirectory>${project.basedir}/src/main/resources/schemas/</schemaDirectory>
 					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>
+					<schemaFiles>
+						main.xsd
+					</schemaFiles>
 				</configuration>
 			</plugin>
 		</plugins>

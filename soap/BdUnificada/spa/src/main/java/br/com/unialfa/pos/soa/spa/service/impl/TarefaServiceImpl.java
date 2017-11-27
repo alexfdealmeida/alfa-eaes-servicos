@@ -14,12 +14,16 @@ import br.com.unialfa.pos.soa.spa.core.model.repository.ComentarioRepository;
 import br.com.unialfa.pos.soa.spa.core.model.repository.TarefaRepository;
 import br.com.unialfa.pos.soa.spa.core.model.repository.UsuarioRepository;
 import br.com.unialfa.pos.soa.spa.core.model.repository.UsuarioTarefaRepository;
+import br.com.unialfa.pos.soa.spa.core.soap.TarefasSoapClient;
 import br.com.unialfa.pos.soa.spa.core.to.UsuarioTarefaTo;
 import br.com.unialfa.pos.soa.spa.service.TarefaService;
 
 @Service
 public class TarefaServiceImpl implements TarefaService {
 
+	@Autowired
+	TarefasSoapClient tarefasSoapClient;
+	
 	@Autowired
 	TarefaRepository tarefaRepository;
 
@@ -35,8 +39,10 @@ public class TarefaServiceImpl implements TarefaService {
 	@Override
 	public List<Tarefa> obtemTodasAsTarefas() {
 
-		List<Tarefa> tarefas = this.tarefaRepository.findByOrderByDataInicioDesc();
+//		List<Tarefa> tarefas = this.tarefaRepository.findByOrderByDataInicioDesc();
 
+		List<Tarefa> tarefas = this.tarefasSoapClient.getAllTarefas();
+		
 		return tarefas;
 
 	}

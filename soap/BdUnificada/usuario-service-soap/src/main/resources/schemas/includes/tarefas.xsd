@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://soa.pos.unialfa.com.br/soap/web-service"
+	targetNamespace="http://soa.pos.unialfa.com.br/soap/web-service"
+	elementFormDefault="qualified">
+
+	<xs:element name="getAllTarefasResponse">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="tarefas" type="tns:tarefa" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getAllTarefasRequest">
+		<xs:complexType>
+			<xs:sequence />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="tarefa">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="titulo" type="xs:string" />
+			<xs:element name="descricao" type="xs:string" />
+			<xs:element name="dataInicio" type="xs:date" />
+			<xs:element name="dataFim" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

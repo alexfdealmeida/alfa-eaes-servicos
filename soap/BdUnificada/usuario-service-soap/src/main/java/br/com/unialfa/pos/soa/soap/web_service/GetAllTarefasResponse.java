@@ -2,11 +2,11 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.7 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2017.11.26 às 06:38:21 PM BRST 
+// Gerado em: 2017.11.27 às 02:56:59 PM BRST 
 //
 
 
-package br.com.unialfa.pos.soa.soap.usuario_web_service;
+package br.com.unialfa.pos.soa.soap.web_service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *         &lt;element name="usuarios" type="{http://soa.pos.unialfa.com.br/soap/usuario-web-service}usuario"/>
+ *         &lt;element name="tarefas" type="{http://soa.pos.unialfa.com.br/soap/web-service}tarefa"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,40 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "usuarios"
+    "tarefas"
 })
-@XmlRootElement(name = "getUsuariosByPartOfNameResponse")
-public class GetUsuariosByPartOfNameResponse {
+@XmlRootElement(name = "getAllTarefasResponse")
+public class GetAllTarefasResponse {
 
-    protected List<Usuario> usuarios;
+    protected List<Tarefa> tarefas;
 
     /**
-     * Gets the value of the usuarios property.
+     * Gets the value of the tarefas property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the usuarios property.
+     * This is why there is not a <CODE>set</CODE> method for the tarefas property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getUsuarios().add(newItem);
+     *    getTarefas().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Usuario }
+     * {@link Tarefa }
      * 
      * 
      */
-    public List<Usuario> getUsuarios() {
-        if (usuarios == null) {
-            usuarios = new ArrayList<Usuario>();
+    public List<Tarefa> getTarefas() {
+        if (tarefas == null) {
+            tarefas = new ArrayList<Tarefa>();
         }
-        return this.usuarios;
+        return this.tarefas;
     }
 
 }

@@ -9,13 +9,13 @@ import org.springframework.ws.config.annotation.EnableWs;
 import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
-import org.springframework.xml.xsd.SimpleXsdSchema;
-import org.springframework.xml.xsd.XsdSchema;
+import org.springframework.xml.xsd.XsdSchemaCollection;
+import org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection;
 
 @EnableWs
 @Configuration
 public class WebServiceConfig extends WsConfigurerAdapter {
-	private static final String NAMESPACE_USUARIOS_URI = "http://soa.pos.unialfa.com.br/soap/usuario-web-service";
+	private static final String NAMESPACE_URI = "http://soa.pos.unialfa.com.br/soap/web-service";
 
 	@Bean
 	public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
@@ -25,20 +25,24 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		return new ServletRegistrationBean(servlet, "/ws/*");
 	}
 
-	@Bean(name = "usuarios")
-	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema usuariosSchema) {
+	@Bean(name = "service")
+	public DefaultWsdl11Definition defaultUsuariosWsdl11Definition(XsdSchemaCollection serviceSchema) {
 
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-		wsdl11Definition.setPortTypeName("UsuariosPort");
-		wsdl11Definition.setLocationUri("/ws/usuarios");
-		wsdl11Definition.setTargetNamespace(NAMESPACE_USUARIOS_URI);
-		wsdl11Definition.setSchema(usuariosSchema);
+		wsdl11Definition.setPortTypeName("ServicePort");
+		wsdl11Definition.setLocationUri("/ws/service");
+		wsdl11Definition.setTargetNamespace(NAMESPACE_URI);
+		wsdl11Definition.setSchemaCollection(serviceSchema);
 
 		return wsdl11Definition;
 	}
 
 	@Bean
-	public XsdSchema usuariosSchema() {
-		return new SimpleXsdSchema(new ClassPathResource("schemas/usuarios.xsd"));
+	public XsdSchemaCollection serviceSchema() {
+		CommonsXsdSchemaCollection xsds = new CommonsXsdSchemaCollection(new ClassPathResource("schemas/main.xsd"));
+		xsds.setInline(true);
+		return xsds;
+//		return new SimpleXsdSchema(new ClassPathResource("schemas/main.xsd"));
 	}
+	
 }

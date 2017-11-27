@@ -1,3 +1,5 @@
+server:
+  port: 9001 
 spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
@@ -10,3 +12,6 @@ spring:
     username: pos
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+    
+service:
+  uri: http://localhost:9000/ws/service

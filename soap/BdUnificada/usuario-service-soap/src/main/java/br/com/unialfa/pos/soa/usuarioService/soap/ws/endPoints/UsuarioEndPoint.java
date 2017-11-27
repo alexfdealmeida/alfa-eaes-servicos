@@ -10,11 +10,11 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import br.com.unialfa.pos.soa.soap.usuario_web_service.GetUsuarioByIdRequest;
-import br.com.unialfa.pos.soa.soap.usuario_web_service.GetUsuarioByIdResponse;
-import br.com.unialfa.pos.soa.soap.usuario_web_service.GetUsuariosByPartOfNameRequest;
-import br.com.unialfa.pos.soa.soap.usuario_web_service.GetUsuariosByPartOfNameResponse;
-import br.com.unialfa.pos.soa.soap.usuario_web_service.ObjectFactory;
+import br.com.unialfa.pos.soa.soap.web_service.GetUsuarioByIdRequest;
+import br.com.unialfa.pos.soa.soap.web_service.GetUsuarioByIdResponse;
+import br.com.unialfa.pos.soa.soap.web_service.GetUsuariosByPartOfNameRequest;
+import br.com.unialfa.pos.soa.soap.web_service.GetUsuariosByPartOfNameResponse;
+import br.com.unialfa.pos.soa.soap.web_service.ObjectFactory;
 //import br.com.unialfa.pos.soa.soap.usuario_web_service.Usuario;
 import br.com.unialfa.pos.soa.usuarioService.soap.core.model.entity.Usuario;
 import br.com.unialfa.pos.soa.usuarioService.soap.core.model.repository.UsuarioRepository;
@@ -23,7 +23,7 @@ import br.com.unialfa.pos.soa.usuarioService.soap.core.model.repository.UsuarioR
 public class UsuarioEndPoint {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UsuarioEndPoint.class);
 
-	private static final String NAMESPACE_URI = "http://soa.pos.unialfa.com.br/soap/usuario-web-service";
+	private static final String NAMESPACE_URI = "http://soa.pos.unialfa.com.br/soap/web-service";
 
 	private UsuarioRepository usuarioRepository;
 
@@ -42,9 +42,9 @@ public class UsuarioEndPoint {
 		GetUsuariosByPartOfNameResponse response = factory.createGetUsuariosByPartOfNameResponse();
 
 		List<Usuario> usuarios = this.usuarioRepository.findByNomeIgnoreCaseContainingOrderByNomeAsc(request.getNome());
-		List<br.com.unialfa.pos.soa.soap.usuario_web_service.Usuario> uSoaps = response.getUsuarios();
+		List<br.com.unialfa.pos.soa.soap.web_service.Usuario> uSoaps = response.getUsuarios();
 		usuarios.forEach(u -> {
-			br.com.unialfa.pos.soa.soap.usuario_web_service.Usuario uSoap = factory.createUsuario();
+			br.com.unialfa.pos.soa.soap.web_service.Usuario uSoap = factory.createUsuario();
 			uSoap.setId(u.getId());
 			uSoap.setNome(u.getNome());
 			uSoap.setEmail(u.getEmail());
@@ -66,7 +66,7 @@ public class UsuarioEndPoint {
 
 		Usuario usuario = this.usuarioRepository.findOne(request.getId());
 	
-		br.com.unialfa.pos.soa.soap.usuario_web_service.Usuario uSoap = factory.createUsuario();
+		br.com.unialfa.pos.soa.soap.web_service.Usuario uSoap = factory.createUsuario();
 		uSoap.setId(usuario.getId());
 		uSoap.setNome(usuario.getNome());
 		uSoap.setEmail(usuario.getEmail());
