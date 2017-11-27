@@ -1,3 +1,6 @@
+server:
+  port: 9001
+
 spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect

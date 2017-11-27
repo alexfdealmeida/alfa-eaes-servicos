@@ -46,3 +46,7 @@ A base de dados é extremamente simples, sendo composta pelas seguintes relaçõ
 - comentario
     - Um comentário possui um autor (usuario) e está diretamente ligado a uma e somente uma tarefa
 	
+## Executando a aplicação
+
+A aplicação está sendo executada na porta 9001. Portanto, uma vez em execução, para testá-la, abra o
+navegador e acesse http://localhost:9001/spa.
