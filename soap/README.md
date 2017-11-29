@@ -34,9 +34,11 @@ mais comum que não se mexa na base de usuários. Faz mais sentido criar essa ta
 do lado da aplicação, no caso, na base de dados de tarefas. Modifique o projeto para que fique assim.
 
 2. No banco de dados unificado:
+
     2.1. Observe que existem poucas operações sendo efetuadas pelo serviço. Grande parte do trabalho
     ainda está sendo feito pelos métodos da aplicação SPA. Escolha 2 métodos (serviços) do SPA e
     transfira-os para a o serviço.
+    
     2.2. Crie uma aba nova a SPA para permitir que os usuários comentem
 sobre uma tarefa. Como inspiração, veja como é a tela de comentários (_issues_) do Github. Faça uma versão
 mais simples.
