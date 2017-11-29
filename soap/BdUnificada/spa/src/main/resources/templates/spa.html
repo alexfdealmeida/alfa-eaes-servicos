@@ -3,35 +3,17 @@
 <head>
 <title>Gerenciador de Tarefas</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
 <link rel="stylesheet" type="text/css"
 	href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
-
 <link rel="stylesheet" th:href="@{/css/estilos.css}"
 	href="../../css/estilos.css" />
-
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Spring Boot</a>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="http://localhost:8080/spa">Home</a></li>
-					<li><a href="#about">About</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+	<nav class="navbar navbar-inverse"></nav>
 	<div class="container">
-
 		<div class="starter-template">
 			<h1>Gerenciador de Tarefas</h1>
 		</div>
-
 		<input type="hidden" th:value="${abaAtiva}" id="idAbaAtiva" />
 		<!-- Nav tabs -->
 		<ul id="appTabsAbas" class="nav nav-tabs" role="tablist"
@@ -43,7 +25,6 @@
 			<li role="presentation"><a href="#alocacao_tab"
 				aria-controls="profile" role="tab" data-toggle="tab">Alocação</a></li>
 		</ul>
-
 		<div id="appTabsContent" class="tab-content"
 			style="visibility: hidden">
 			<div role="tabpanel" class="tab-pane fade in active"
@@ -57,19 +38,15 @@
 								class="form-control" id="usuarioInputNome" placeholder="Nome"
 								th:field="*{nome}" autocomplete="off" />
 						</div>
-
 						<div class="form-group">
 							<label for="usuarioInputEmail">E-mail</label> <input type="email"
 								class="form-control" id="usuarioInputEmail" placeholder="Email"
 								th:field="*{email}" autocomplete="off" />
 						</div>
-
 						<button id="idBtnAdicionarUsuario" type="submit"
 							class="btn btn-primary">Adicionar</button>
 					</form>
-
 					<hr />
-
 					<table th:if="${not #lists.isEmpty(usuarios)}"
 						class="table table-striped">
 						<thead>
@@ -92,9 +69,7 @@
 						</tbody>
 					</table>
 				</div>
-
 			</div>
-
 			<div role="tabpanel" class="tab-pane fade" id="tarefas_tab">
 				<div style="margin-top: 10px;">
 					<form action="#" th:action="@{/spa/add-tarefa}"
@@ -105,38 +80,28 @@
 								class="form-control" id="tarefaInputTitulo" placeholder="Título"
 								th:field="*{titulo}" autocomplete="off" />
 						</div>
-
 						<div class="row">
-
 							<div class="col-sm-6 form-group">
 								<label for="tarefaInputDataInicio">Início</label> <input
 									type="date" class="form-control" id="tarefaInputDataInicio"
 									placeholder="Início" th:field="*{dataInicio}"
 									autocomplete="off" />
 							</div>
-
 							<div class="col-sm-6 form-group">
 								<label for="tarefaInputDataFim">Fim</label> <input type="date"
 									class="form-control" id="tarefaInputDataFim" placeholder="Fim"
 									th:field="*{dataFim}" autocomplete="off" />
 							</div>
-
 						</div>
-
 						<div class="form-group">
 							<label for="tarefaTextAreaDescricao">Descrição</label>
 							<textarea class="form-control" id="tarefaTextAreaDescricao"
 								placeholder="Descrição" th:field="*{descricao}" rows="3"></textarea>
 						</div>
-
-
-
 						<button id="idBtnAdicionarTarefa" type="submit"
 							class="btn btn-primary">Adicionar</button>
 					</form>
-
 					<hr />
-
 					<table th:if="${not #lists.isEmpty(tarefas)}"
 						class="table table-striped">
 						<thead>
@@ -160,38 +125,33 @@
 					</table>
 				</div>
 			</div>
-
 			<div role="tabpanel" class="tab-pane fade" id="alocacao_tab">
 				<div style="margin-top: 10px;">
-					<form action="#" th:action="@{/spa/aloca-tarefa-usuario}"
+					<form action="#" id="alocacaoForm"
+						th:action="@{/spa/aloca-tarefa-usuario}"
 						th:object="${usuarioTarefa}" method="post">
 						<input type="hidden" th:field="*{id}" />
 						<div class="form-group">
 							<label for="usuarioTarefaTarefaSelect">Título</label> <select
 								class="form-control" id="usuarioTarefaTarefaSelect"
 								th:field="${usuarioTarefa.idTarefa}">
+								<option value="">Selecione</option>
 								<option th:each="t : ${tarefas}" th:value="${t.id}"
 									th:text="${t.titulo}">Tarefa</option>
 							</select>
 						</div>
-
 						<div class="form-group">
 							<label for="usuarioTarefaUsuarioSelect">Usuário</label> <select
 								class="form-control" id="usuarioTarefaUsuarioSelect"
 								th:field="${usuarioTarefa.idUsuario}">
+								<option value="">Selecione</option>
 								<option th:each="u : ${usuarios}" th:value="${u.id}"
 									th:text="${u.nome}">Tarefa</option>
 							</select>
 						</div>
-
-
-
 						<button type="submit" class="btn btn-primary">Adicionar</button>
 					</form>
-
-
 					<hr />
-
 					<table th:if="${not #lists.isEmpty(usuariosTarefas)}"
 						class="table table-striped">
 						<thead>
@@ -214,70 +174,84 @@
 					</table>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
 	<!-- /.container -->
-
 	<script type="text/javascript"
 		src="/webjars/jquery/1.11.1/jquery.min.js"></script>
-
 	<script type="text/javascript"
 		src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 	<script>
-		$(function() {
-			
-			const $idUsuarioParaEdicao = $('#idUsuarioParaEdicao');
-			const $idBtnAdicionarUsuario = $('#idBtnAdicionarUsuario');
-			
-			if(!!$idUsuarioParaEdicao.val()) {
-				$idBtnAdicionarUsuario.text('Gravar');
-			} else {
-				$idBtnAdicionarUsuario.text('Adicionar');
-			}
-			
-			const $idTarefaParaEdicao = $('#idTarefaParaEdicao');
-			const $idBtnAdicionarTarefa = $('#idBtnAdicionarTarefa');
-			
-			if(!!$idTarefaParaEdicao.val()) {
-				$idBtnAdicionarTarefa.text('Gravar');
-			} else {
-				$idBtnAdicionarTarefa.text('Adicionar');
-			}
-
-			const $usuarioTarefaTarefaSelect = $('#usuarioTarefaTarefaSelect');
-			
-			$usuarioTarefaTarefaSelect.change(() => {
-				const idTarefa = $usuarioTarefaTarefaSelect.val();
-				
-				const destino = 'http://' + window.location.hostname + ':8080/spa/obtem-usuarios-tarefa/' + idTarefa;
-				
-				window.location.href = destino; 
-				
-			});
-			
-			const $inputAbaAtiva = $('#idAbaAtiva');
-
-			switch ($inputAbaAtiva.val()) {
-			case 'tarefas':
-				$('#appTabsAbas li:eq(1) a').tab('show');
-				break;
-				
-			case 'tarefas-alocadas':
-				$('#appTabsAbas li:eq(2) a').tab('show');
-			break;
-			}
-
-			const $appTabsAba = $('#appTabsAbas');
-			const $appTabsContent = $('#appTabsContent');
-
-			$appTabsAba.css('visibility', 'visible');
-			$appTabsContent.css('visibility', 'visible');
-
-		});
-	</script>
-
+         $(function() {
+         	
+         	const $alocacaoForm = document.getElementById('alocacaoForm');
+         	if ($alocacaoForm.attachEvent) {
+         		$alocacaoForm.attachEvent("submit", processaAlocacaoForm);
+         	} else {
+         		$alocacaoForm.addEventListener("submit", processaAlocacaoForm);
+         	}
+         	
+         	const $idUsuarioParaEdicao = $('#idUsuarioParaEdicao');
+         	const $idBtnAdicionarUsuario = $('#idBtnAdicionarUsuario');
+         	
+         	if(!!$idUsuarioParaEdicao.val()) {
+         		$idBtnAdicionarUsuario.text('Gravar');
+         	} else {
+         		$idBtnAdicionarUsuario.text('Adicionar');
+         	}
+         	
+         	const $idTarefaParaEdicao = $('#idTarefaParaEdicao');
+         	const $idBtnAdicionarTarefa = $('#idBtnAdicionarTarefa');
+         	
+         	if(!!$idTarefaParaEdicao.val()) {
+         		$idBtnAdicionarTarefa.text('Gravar');
+         	} else {
+         		$idBtnAdicionarTarefa.text('Adicionar');
+         	}
+         
+         	const $usuarioTarefaTarefaSelect = $('#usuarioTarefaTarefaSelect');
+         	
+         	$usuarioTarefaTarefaSelect.change(() => {
+         		const idTarefa = $usuarioTarefaTarefaSelect.val();
+         		
+         		const destino = 'http://' + window.location.hostname + ':9001/spa/obtem-usuarios-tarefa/' + idTarefa;
+         		
+         		window.location.href = destino; 
+         		
+         	});
+         	
+         	const $inputAbaAtiva = $('#idAbaAtiva');
+         
+         	switch ($inputAbaAtiva.val()) {
+         	case 'tarefas':
+         		$('#appTabsAbas li:eq(1) a').tab('show');
+         		break;
+         		
+         	case 'tarefas-alocadas':
+         		$('#appTabsAbas li:eq(2) a').tab('show');
+         	break;
+         	}
+         
+         	const $appTabsAba = $('#appTabsAbas');
+         	const $appTabsContent = $('#appTabsContent');
+         
+         	$appTabsAba.css('visibility', 'visible');
+         	$appTabsContent.css('visibility', 'visible');
+         
+         });
+         
+         function processaAlocacaoForm(e) {
+             
+         
+             const $usuarioTarefaTarefaSelect = $('#usuarioTarefaTarefaSelect');
+             const $usuarioTarefaUsuarioSelect = $('#usuarioTarefaUsuarioSelect');
+             
+             if(!$usuarioTarefaTarefaSelect.val() || !$usuarioTarefaUsuarioSelect.val()) {
+             	if (e.preventDefault) e.preventDefault();
+             }
+         
+             return true;
+         }
+      </script>
 </body>
 </html>

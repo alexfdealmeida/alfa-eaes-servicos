@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://soa.pos.unialfa.com.br/soap/web-service"
+	targetNamespace="http://soa.pos.unialfa.com.br/soap/web-service"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+
+	<xs:element name="getTarefaByUsuarioTarefaRemotoIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="tarefaId" type="xs:long"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getTarefaByUsuarioTarefaRemotoIdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuarioTarefaRemotoId" type="xs:long"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="removeUsuarioRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuarioId" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="removeUsuarioResponse">
+		<xs:complexType>
+			<xs:sequence />
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="saveUsuarioRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuario" type="tns:usuario" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="saveUsuarioResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuario" type="tns:usuario" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getUsuarioByIdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getUsuarioByIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuario" type="tns:usuario" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getUsuariosDeUmaTarefaByTarefaIdResponse">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="usuariosTarefas" type="tns:usuarioTarefa" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getUsuariosDeUmaTarefaByTarefaIdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="alocaTarefaAoUsuarioResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sucesso" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="alocaTarefaAoUsuarioRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuarioId" type="xs:long" />
+				<xs:element name="tarefaId" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="desalocaTarefaDeUsuarioEspecificoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuarioTarefaRemotaId" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="desalocaTarefaDeUsuarioEspecificoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sucesso" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="desalocaTarefaDeTodosOsUsuariosRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="tarefaRemotaId" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="desalocaTarefaDeTodosOsUsuariosResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sucesso" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="desalocaAllTarefasDoUsuarioRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuarioId" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="desalocaAllTarefasDoUsuarioResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sucesso" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getAllUsuariosRequest">
+		<xs:complexType>
+			<xs:sequence />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getAllUsuariosResponse">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="usuarios" type="tns:usuario" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="usuarioTarefa">
+		<xs:sequence>
+			<xs:element name="idUsuarioTarefa" type="xs:long" />
+			<xs:element name="usuario" type="tns:usuario" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="usuario">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="nome" type="xs:string" />
+			<xs:element name="email" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+</xs:schema>
