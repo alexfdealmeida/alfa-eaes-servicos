@@ -1,0 +1,68 @@
+<form [formGroup]="_outerForm" (ngSubmit)="_grava(f)" #f="ngForm">
+  <mat-card>
+    <mat-card-content>
+
+      <div fxLayout="column" fxLayoutAlign="start top" fxLayoutGap="10px">
+        <mat-form-field fxFlex="noshrink" class="full-width">
+          <mat-select placeholder="Tarefa" formControlName="tarefa" (selectionChange)="_findUsuariosDaTarefa($event.value)">
+            <mat-option *ngFor="let tarefa of tarefas" [value]="tarefa">{{tarefa.titulo | uppercase}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="noshrink" class="full-width">
+          <mat-select placeholder="Usuário" formControlName="usuario">
+            <mat-option *ngFor="let usuario of usuarios" [value]="usuario">{{usuario.nome | uppercase}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button type="submit" color="primary" [disabled]="!_outerForm.valid">Gravar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<div [style.display]="_dataSource.data?.length > 0 ? 'block' : 'none'" class="app-divider"></div>
+
+<mat-card [style.display]="_dataSource.data?.length > 0 ? 'block' : 'none'">
+  <mat-card-content>
+    <div class="app-table-container">
+      <div class="app-loading-shade" *ngIf="_isLoadingResults">
+        <mat-spinner *ngIf="_isLoadingResults"></mat-spinner>
+      </div>
+
+      <mat-table #table [dataSource]="_dataSource" class="app-table mat-elevation-z2" matSort matSortActive="nome"
+        matSortDisableClear matSortDirection="asc">
+
+        <!-- Coluna com o nome -->
+        <ng-container matColumnDef="nome">
+          <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true">Nome</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.usuario.nome | uppercase }}</mat-cell>
+        </ng-container>
+
+        <!-- Coluna com o e-mail -->
+        <ng-container matColumnDef="tarefa">
+          <mat-header-cell *matHeaderCellDef>Tarefa</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.tarefa.titulo | uppercase }}</mat-cell>
+        </ng-container>
+
+        <!-- Coluna com os botões de editar/excluir -->
+        <ng-container matColumnDef="colunaDeOpcoes">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="_remove(row.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="_definicaoDasColunas"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: _definicaoDasColunas;"></mat-row>
+      </mat-table>
+      <mat-paginator [style.display]="_resultsLength > _pageSize ? 'block' : 'none'" [length]="_resultsLength"
+        [pageSize]="_pageSize">
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>

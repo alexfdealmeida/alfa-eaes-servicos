@@ -1,0 +1,68 @@
+<form [formGroup]="_outerForm" (ngSubmit)="_grava(f)" #f="ngForm">
+  <mat-card>
+    <mat-card-content>
+
+      <div fxLayout="column" fxLayoutAlign="start top" fxLayoutGap="10px">
+        <mat-form-field fxFlex="noshrink" class="full-width">
+          <input matInput type="text" placeholder="Nome" formControlName="nome" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="noshrink" class="full-width">
+          <input matInput type="email" placeholder="E-mail" formControlName="email" autocomplete="off">
+        </mat-form-field>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button type="button" color="accent" (click)="_limpa()" [disabled]="_outerForm.pristine && !_usuario">Cancelar</button>
+      <button mat-raised-button type="submit" color="primary" [disabled]="!_outerForm.valid">Gravar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<div [style.display]="_dataSource.data?.length > 0 ? 'block' : 'none'" class="app-divider"></div>
+
+<mat-card [style.display]="_dataSource.data?.length > 0 ? 'block' : 'none'">
+  <mat-card-content>
+    <div class="app-table-container">
+      <div class="app-loading-shade" *ngIf="_isLoadingResults">
+        <mat-spinner *ngIf="_isLoadingResults"></mat-spinner>
+      </div>
+
+      <mat-table #table [dataSource]="_dataSource" class="app-table mat-elevation-z2" matSort matSortActive="nome"
+        matSortDisableClear matSortDirection="asc">
+
+        <!-- Coluna com o nome -->
+        <ng-container matColumnDef="nome">
+          <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true">Nome</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.nome }}</mat-cell>
+        </ng-container>
+
+        <!-- Coluna com o e-mail -->
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef>E-mail</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.email }}</mat-cell>
+        </ng-container>
+
+        <!-- Coluna com os botões de editar/excluir -->
+        <ng-container matColumnDef="colunaDeOpcoes">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="_altera(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="_remove(row.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="_definicaoDasColunas"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: _definicaoDasColunas;"></mat-row>
+      </mat-table>
+      <mat-paginator [style.display]="_resultsLength > _pageSize ? 'block' : 'none'" [length]="_resultsLength"
+        [pageSize]="_pageSize">
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>
