@@ -65,10 +65,14 @@ o restante da comunicação necessária para as outras abas funcionarem (no proj
 Apesar de termos uma aplicação distribuída usando comunicação RestFul, ainda não temos um serviço, pelas razões
 que, se você já assistiu à aula, já deve saber bem
 
-## Atividade: implementar o restante da API Restful
+## Atividades
+
+### Atividade 1: implementar o restante da API Restful (grupos de 2 pessoas)
 
 Nosso cliente Angular está pronto para funcionar plenamente, mas... espere! Não temos um servidor com toda a API
 implementada e este é o seu desafio. Veja como é a API RestFul:
+
+#### USUÁRIOS
 
 - http://localhost:9000/usuarios/all: 
     - status: **funcionando**
@@ -87,6 +91,9 @@ implementada e este é o seu desafio. Veja como é a API RestFul:
     - o que faz: remove o usuário indicado pelo id (na URL). 
     - parâmetro: id do usuário a ser removido (na URL)
      retorno: não retorna nada
+
+### TAREFAS
+
 - http://localhost:9000/tarefas/all
     - status: **não implementada**
     - verbo: GET
@@ -103,6 +110,9 @@ implementada e este é o seu desafio. Veja como é a API RestFul:
     - verbo: DELETE
     - o que faz: remove a tarefa indicada pelo id (na URL). 
     - parâmetro: id da tarefa a ser removida (na URL)
+
+### ALOCAÇÃO DE TAREFAS A USUÁRIOS
+
 - http://localhost:9000/usuarios-tarefas/find-by-tarefa-id/{idTarefa}
     - status: **não implementada**
     - verbo: GET
@@ -120,4 +130,11 @@ implementada e este é o seu desafio. Veja como é a API RestFul:
     - verbo: DELETE
     - o que faz: remove um registro do tipo UsuarioTArefa, indicado pelo id (na URL). 
     - parâmetro: id do UsuarioTarefa a ser removido (na URL)
+    
+### Atividade 2: Nível 3 do Modelo de Maturidade de Richardson (grupos de 2 pessoas)
+
+- Pré-requisito: um dos componentes do grupo precisa ter algum conhecimento de Angular
+
+Escolha um dos "serviços" da atividade 1 e implemente o nível 3 de maturidade de Richardson
+em todo o serviço
 
