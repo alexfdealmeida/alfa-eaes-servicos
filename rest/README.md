@@ -2,7 +2,7 @@
 
 ### O `angular-cli`
 
-Antes de mais nada, tenha certeza de que o `angular-cli` está instalado. Ele é a _command line
+Antes de mais nada, tenha certeza de que o [angular-cli](https://cli.angular.io/) está instalado. Ele é a _command line
 interface_ oficial do Google para o Angular.
 
 Para verificar, execute `ng -v` na linha de comando de um terminal. Você 
