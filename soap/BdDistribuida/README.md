@@ -1,4 +1,4 @@
-# Base de Dados Unificada
+# Base de Dados Distribuída
 
 Existem 2 projetos nesta área:
 
