@@ -13,7 +13,7 @@ export class TarefaService {
 
   constructor(private http: HttpClient) { }
 
-  findAll(sort: string, order: string, page: number)
+  findAll(sort: string, order: string, page: number, pageSize: number)
     : Observable<PaginaDeRespostaDoSpring<TarefaEntityTo>> {
 
     const requestUrl = `${URL.baseUrl}${URL.tarefasAll_Get}`;
@@ -22,6 +22,7 @@ export class TarefaService {
       params: new HttpParams()
         .set('sort', sort + ',' + order)
         .set('page', '' + page)
+        .set('size', '' + pageSize)
     });
   }
 

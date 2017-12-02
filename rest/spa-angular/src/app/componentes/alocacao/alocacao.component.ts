@@ -64,7 +64,8 @@ export class AlocacaoComponent implements AfterViewInit {
       switchMap(() => {
         setTimeout(() => this._isLoadingResults = true, 0);
         return this._alocacaoDeTarefasService!.findByTarefaId(this._outerForm.value.tarefa.id,
-          'usuario.' + this._sort.active, this._sort.direction, this._paginator.pageIndex);
+          'usuario.' + this._sort.active, this._sort.direction, this._paginator.pageIndex,
+          this._pageSize);
       }),
       map((data: PaginaDeRespostaDoSpring<UsuarioTarefaEntityTo>) => {
         // Troca os flags para mostrar que os resultados já chegaram.
@@ -105,7 +106,7 @@ export class AlocacaoComponent implements AfterViewInit {
     this._alocacaoDeTarefasService.remove(usuarioId)
       .subscribe(() => {
         this._carregaUsuarios();
-      })
+      });
   }
 
   _carregaUsuarios() {

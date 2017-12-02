@@ -46,3 +46,16 @@
 mat-card {
     margin: 5px;
 } 
+
+mat-header-cell {
+    font-weight: 800;
+    color: white;
+}
+
+mat-header-row {
+    background-color: rgba(1, 1, 1, 1);
+}
+
+.mat-row {
+    min-height: 40px;
+}

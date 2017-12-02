@@ -59,8 +59,8 @@ export class TarefasComponent implements AfterViewInit {
       startWith({}),
       switchMap(() => {
         setTimeout(() => this._isLoadingResults = true, 0);
-        return this._tarefaService!.findAll(
-          this._sort.active, this._sort.direction, this._paginator.pageIndex);
+        return this._tarefaService!.findAll(this._sort.active,
+          this._sort.direction, this._paginator.pageIndex, this._pageSize);
       }),
       map((data: PaginaDeRespostaDoSpring<TarefaEntityTo>) => {
         // Troca os flags para mostrar que os resultados já chegaram.
@@ -127,7 +127,7 @@ export class TarefasComponent implements AfterViewInit {
     this._tarefaService.remove(tarefaId)
       .subscribe(() => {
         this._carregaTarefas();
-      })
+      });
   }
 
   _cancela() {

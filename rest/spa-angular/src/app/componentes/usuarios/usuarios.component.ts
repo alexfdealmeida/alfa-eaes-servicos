@@ -57,8 +57,8 @@ export class UsuariosComponent implements AfterViewInit {
       startWith({}),
       switchMap(() => {
         setTimeout(() => this._isLoadingResults = true, 0);
-        return this._usuarioService!.findAll(
-          this._sort.active, this._sort.direction, this._paginator.pageIndex);
+        return this._usuarioService!.findAll(this._sort.active,
+          this._sort.direction, this._paginator.pageIndex, this._pageSize);
       }),
       map((data: PaginaDeRespostaDoSpring<UsuarioEntityTo>) => {
         // Troca os flags para mostrar que os resultados já chegaram.
@@ -122,7 +122,7 @@ export class UsuariosComponent implements AfterViewInit {
     this._usuarioService.remove(usuarioId)
       .subscribe(() => {
         this._carregaUsuarios();
-      })
+      });
   }
 
   _cancela() {

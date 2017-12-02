@@ -4,7 +4,7 @@
     max-height: 500px;
     min-width: 300px;
     position: relative;
-  }
+}
 
 .app-table {
     overflow: auto;
@@ -41,8 +41,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
 mat-card {
     margin: 5px;
-} 
+}
+
+mat-header-cell {
+    font-weight: 800;
+    color: white;
+}
+
+mat-header-row {
+    background-color: rgba(1, 1, 1, 1);
+}
+
+.mat-row {
+    min-height: 40px;
+}
