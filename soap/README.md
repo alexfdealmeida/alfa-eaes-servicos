@@ -16,7 +16,7 @@ disponíveis as ferramenas do SGBD, como os produtos cartesianos (`joins`).
 ### Base de Dados Distribuída
 
 Nessa abordagem a base de dados de usuários é distribuída (o serviço possui uma BD própria), 
-o que faz com que elimina parte do apoio do SGBD trazendo um pouco em complexidade ao sistema.
+o que elimina parte do apoio do SGBD trazendo um pouco em complexidade ao sistema.
 Entretanto há ganhos em termos de escalabilidade e especialidade.
 
 ## Observações Importantes
