@@ -1,5 +1,5 @@
-import { Component, ViewChild, AfterViewInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, ViewChild, AfterViewInit, Output, EventEmitter, ElementRef } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import {
   MatTableDataSource,
   MatPaginator,
@@ -8,6 +8,7 @@ import {
 } from '@angular/material';
 
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 import { merge } from 'rxjs/observable/merge';
 import { of as observableOf } from 'rxjs/observable/of';
 import {
@@ -27,7 +28,11 @@ import { UsuarioEntityTo, PaginaDeRespostaDoSpring } from '../../core/model/to/t
   styleUrls: ['./usuarios.component.scss']
 })
 export class UsuariosComponent implements AfterViewInit {
+  @ViewChild(FormGroupDirective) _outerFormDirective;
   _outerForm: FormGroup;
+
+  @ViewChild('elementToFocus') _elementToFocus: ElementRef;
+
   _definicaoDasColunas = ['nome', 'email', 'colunaDeOpcoes'];
   _dataSource = new MatTableDataSource();
 
@@ -41,6 +46,10 @@ export class UsuariosComponent implements AfterViewInit {
 
   @Output() usuariosChanged = new EventEmitter<UsuarioEntityTo[]>();
 
+  private _shoudSubscribe = true;
+  private _subscription: Subscription;
+  private _myTableObservable: Observable<any>;
+
   constructor(private _usuarioService: UsuarioService, _fb: FormBuilder) {
     this._outerForm = _fb.group({
       nome: ['', Validators.required],
@@ -52,7 +61,13 @@ export class UsuariosComponent implements AfterViewInit {
     // If the user changes the sort order, reset back to the first page.
     this._sort.sortChange.subscribe(() => this._paginator.pageIndex = 0);
 
-    merge(this._sort.sortChange, this._paginator.page)
+    this._myTableObservable = this._myObservable();
+
+    this._subscribeToChanges();
+  }
+
+  private _myObservable(): Observable<any> {
+    return merge(this._sort.sortChange, this._paginator.page)
       .pipe(
       startWith({}),
       switchMap(() => {
@@ -71,10 +86,16 @@ export class UsuariosComponent implements AfterViewInit {
         this._isLoadingResults = false;
         return observableOf([]);
       })
-      ).subscribe((data: UsuarioEntityTo[]) => {
-        this._dataSource.data = data;
-        this.usuariosChanged.emit(data);
-      });
+      );
+  }
+
+  private _subscribeToChanges() {
+    if (!this._shoudSubscribe) { return; }
+
+    this._subscription = this._myTableObservable.subscribe((data: UsuarioEntityTo[]) => {
+      this._dataSource.data = data;
+      this.usuariosChanged.emit(data);
+    });
   }
 
   private _loadValueToInstanceUsuario(usuario: UsuarioEntityTo) {
@@ -84,10 +105,9 @@ export class UsuariosComponent implements AfterViewInit {
   private _loadInstanceUsuarioToForm() {
     if (!!this._usuario) {
       this._outerForm.patchValue(this._usuario);
-      this._outerForm.markAsPristine();
-      this._outerForm.markAsUntouched();
     } else {
-      this._outerForm.reset();
+      this._elementToFocus.nativeElement.focus();
+      setTimeout(() =>  this._outerFormDirective.resetForm());
     }
   }
 
@@ -132,14 +152,16 @@ export class UsuariosComponent implements AfterViewInit {
   _limpa() {
     this._loadValueToInstanceUsuario(null);
     this._loadInstanceUsuarioToForm();
-
-    // this._outerForm.markAsPristine();
-    // this._outerForm.markAsUntouched();
   }
 
   _carregaUsuarios() {
     // força recarga dos dados
+    if (!this._isValidSubscription) { this._subscribeToChanges(); }
     this._paginator.page.next(new PageEvent());
+  }
+
+  private get _isValidSubscription(): boolean {
+    return !!this._subscription && !this._subscription.closed;
   }
 
 }
