@@ -10,6 +10,7 @@ do mesmo sistema:
 - Sistema Monolítico
 - Sistema com SOAP
 - Sistema com REST
+- Sistema com infraestrutura do Springcloud
 
 ## Ambiente de Desenvolvimento
 
