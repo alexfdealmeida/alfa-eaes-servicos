@@ -1,0 +1,16 @@
+zuul:
+  routes:
+    usuarios:
+      path: /usuarios/**
+      serviceId: usuarios
+    tarefas:
+      path: /tarefas/**
+      serviceId: tarefas
+eureka:
+  instance:
+    hostname: zuul-unialfa.herokuapp.com
+  client:
+    service-url:
+      defaultZone: https://eureka-unialfa.herokuapp.com/eureka/
+    healthcheck: true
+

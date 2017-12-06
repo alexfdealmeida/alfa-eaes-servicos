@@ -1,0 +1,24 @@
+server:
+  port: 0
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  datasource:
+    url: jdbc:postgres://ec2-54-243-211-197.compute-1.amazonaws.com:5432/deutdjeanuuo2f
+    username: deutdjeanuuo2f
+    password: 18cffd48c1cb179ac9a7111279c6f31ed17af43beb25c0756fbbbae899e6267c
+    driver-class-name: org.postgresql.Driver
+    
+eureka:
+  instance:
+    hostname: servico-usuarios-2-unialfa.herokuapp.com
+    secure-port-enabled: true
+    non-secure-port-enabled: false
+  client:
+    service-url:
+      defaultZone: https://eureka-unialfa.herokuapp.com/eureka/
+    healthcheck: true

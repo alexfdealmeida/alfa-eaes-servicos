@@ -1,0 +1,25 @@
+server:
+  port: 0
+eureka:
+  instance:
+    hostname: eureka-unialfa.herokuapp.com
+    secure-port-enabled: true
+    non-secure-port-enabled: false
+    statusPageUrl: https://${eureka.instance.hostname}/info
+    healthCheckUrl: https://${eureka.instance.hostname}/health
+    homePageUrl: https://${eureka.instance.hostname}/
+  server:
+    enable-self-preservation: false
+#    eviction-interval-timer-in-ms: 1000
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: https://${eureka.instance.hostname}/eureka/
+    healthcheck: true
+logging:
+  level:
+    com:
+      netflix:
+        eureka: false
+        discovery: false
