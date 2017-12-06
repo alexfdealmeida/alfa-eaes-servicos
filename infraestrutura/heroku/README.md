@@ -82,7 +82,7 @@ integrado ao Springcloud, eventualmente com o uso do Spring Security Oauth2.
 - Como deve ter visto, o projeto é composto de 5 aplicativos springboot e um cliente angular:
     - Se for executá-los em um único computador, tenha certeza de que existe memória suficiente para
     que tudo não fique excessivamente lento
-- Caso tenha interesse em testar a configuração nos servidores do [Heroku](www.heroku.com), verifique o conteúdo da
+- Caso tenha interesse em testar a configuração nos servidores do [Heroku](http://www.heroku.com), verifique o conteúdo da
 pasta [heroku](HEROKU.md). 
 
 ## <span id="atividades">Atividades</span>
