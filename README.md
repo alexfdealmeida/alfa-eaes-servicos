@@ -45,6 +45,23 @@ pode ser feito.
 	
 ![image](https://media.giphy.com/media/3o6fIYvzlzbqP7jx04/giphy.gif)
 
+## Segurança
+
+Devido à extensão do assunto, uma decisão tomada foi a de não adicionar ao código, já extenso, funções 
+de segurança. Entretanto, como sei que pode ser de interesse de alguns, a parte de segurança pode
+ser implementada. O material listado abaixo é bom (assisti aos vídeos ou li os textos), porém geralmente
+a funcionalidade de segurança depende muito da arquitetura adodata em cada caso. Assim, os links
+de textos e vídeos que coloquei aqui devem ser encarados apenas como peças para se construir uma
+solução completa.
+
+### Backend (Spring)
+
+1. [![Vídeo da Algaworks](https://img.youtube.com/vi/FOX0r52_hwE/0.jpg)](https://www.youtube.com/watch?v=FOX0r52_hwE)
+
+### Frontend (No projeto @angular)
+
+1. [Route Guards](https://angular.io/guide/router#milestone-5-route-guards)
+
 ## Em caso de dúvidas
 
 Caso tenha dúvidas, fique à vontade para [criar uma issue no repositório deste projeto no Github](https://github.com/julianobrasil/servicos-pos-unialfa/issues).
