@@ -41,7 +41,7 @@ export class TarefasComponent implements AfterViewInit {
   _pageSize = 10;
   _resultsLength = 0;
   _isLoadingResults = false;
-  private _tarefa: TarefaEntityTo;
+  _tarefa: TarefaEntityTo;
 
   @Output() tarefasChanged = new EventEmitter<TarefaEntityTo[]>();
 
@@ -121,7 +121,7 @@ export class TarefasComponent implements AfterViewInit {
     this._loadInstanceTarefaToForm();
   }
 
-  _grava(formDirective: FormGroupDirective) {
+  _grava() {
     if (!this._tarefa) {
       this._tarefa = new TarefaEntityTo();
     }

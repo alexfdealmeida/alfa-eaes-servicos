@@ -55,7 +55,7 @@ export class UsuariosComponent implements AfterViewInit, OnDestroy {
   _pageSize = 10;
   _resultsLength = 0;
   _isLoadingResults = false;
-  private _usuario: UsuarioEntityTo;
+  _usuario: UsuarioEntityTo;
 
   @Output() usuariosChanged = new EventEmitter<UsuarioEntityTo[]>();
 
