@@ -56,7 +56,7 @@ solução completa.
 
 ### Backend (Spring)
 
-1. [![Vídeo da Algaworks](https://img.youtube.com/vi/FOX0r52_hwE/0.jpg)](https://www.youtube.com/watch?v=FOX0r52_hwE)
+1. Spring Security (Algaworks): [![Vídeo da Algaworks](https://img.youtube.com/vi/FOX0r52_hwE/0.jpg)](https://www.youtube.com/watch?v=FOX0r52_hwE)
 
 ### Frontend (No projeto @angular)
 
