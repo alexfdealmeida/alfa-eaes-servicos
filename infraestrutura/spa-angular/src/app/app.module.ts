@@ -19,6 +19,7 @@ import { AlocacaoComponent } from './componentes/alocacao/alocacao.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,9 @@ import { AlocacaoComponent } from './componentes/alocacao/alocacao.component';
     MaterialModule,
     ServicosModule
   ],
-  providers: [ { provide: LOCALE_ID, useValue: 'pt' }],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

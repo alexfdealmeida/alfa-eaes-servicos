@@ -1,11 +1,13 @@
 export const baseUrlTarefas = 'https://zuul-unialfa.herokuapp.com/tarefas';
 export const baseUrlUsuarios = 'https://zuul-unialfa.herokuapp.com/usuarios';
+export const baseUrlMensageria = 'https://servico-mensageria-unialfa.herokuapp.com/messaging';
 
 // api de usuários
 export const usuariosAll_Get = '/usuarios/all';
 export const usuariosSaveOrCreate_Post = '/usuarios/save-or-create';
 export const usuariosRemove_Delete = '/usuarios/remove/{id}';
 export const usuariosRemove_Delete_Par1 = '{id}';
+export const usuariosNotificoes_WebSocket = '/usuarios-notifications';
 
 // api de tarefas
 export const tarefasAll_Get = '/tarefas/all';

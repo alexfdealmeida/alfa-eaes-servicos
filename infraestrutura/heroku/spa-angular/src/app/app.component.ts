@@ -4,6 +4,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 import { UsuarioEntityTo, TarefaEntityTo } from './core/model/to/to';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

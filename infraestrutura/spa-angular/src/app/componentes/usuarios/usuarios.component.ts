@@ -1,4 +1,11 @@
-import { Component, ViewChild, AfterViewInit, Output, EventEmitter, ElementRef } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  AfterViewInit,
+  Output,
+  EventEmitter,
+  ElementRef
+} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import {
   MatTableDataSource,
@@ -63,6 +70,7 @@ export class UsuariosComponent implements AfterViewInit {
       email: ['', [Validators.required, Validators.email]]
     });
   }
+
 
   ngAfterViewInit() {
     // If the user changes the sort order, reset back to the first page.

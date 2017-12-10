@@ -75,6 +75,12 @@ A arquitetura que se almeja pode ser vista no gif animado a seguir:
 arquitetura. Porém o cadeado na figura acima é um bom começo para se pensar em um projeto de segurança
 integrado ao Springcloud, eventualmente com o uso do Spring Security Oauth2.
 
+### Mensageria
+
+Além disso, temos também um serviço de mensageria na pasta do heroku. Serve apenas para exemplificar a
+utilidade deste tipo de serviço. Aqui, se várias pessoas estiverem executando o serviço de alocação de tarefas,
+e uma delas criar ou excluir um usuário, automaticamente, as telas de todas serão atualizadas.
+
 ## Pontos de interesse
 
 - O conjunto não está completo: existe <a href="#atividades">atividade para você fazer</a>

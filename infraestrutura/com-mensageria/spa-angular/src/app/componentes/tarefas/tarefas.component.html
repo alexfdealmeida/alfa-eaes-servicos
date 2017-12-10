@@ -1,0 +1,84 @@
+<form [formGroup]="_outerForm" (ngSubmit)="_grava()">
+  <mat-card>
+    <mat-card-content>
+
+      <div fxLayout="column" fxLayoutAlign="start top" fxLayoutGap="10px">
+        <mat-form-field fxFlex="noshrink" class="full-width">
+          <input matInput type="text" placeholder="Título" formControlName="titulo" autocomplete="off">
+        </mat-form-field>
+
+        <div fxFlex="noshrink" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+          <mat-form-field>
+            <input matInput formControlName="dataInicio" [max]="_outerForm.value.dataFim" [matDatepicker]="datepickerInicio"
+              placeholder="Início" readonly>
+            <mat-datepicker-toggle matSuffix [for]="datepickerInicio"></mat-datepicker-toggle>
+            <mat-datepicker #datepickerInicio></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput formControlName="dataFim" [min]="_outerForm.value.dataInicio" [matDatepicker]="datepickerFim"
+              placeholder="Fim" readonly>
+            <mat-datepicker-toggle matSuffix [for]="datepickerFim"></mat-datepicker-toggle>
+            <mat-datepicker #datepickerFim></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field fxFlex="noshrink" class="full-width">
+          <textarea matInput type="text" placeholder="Descrição" formControlName="descricao" autocomplete="off"
+            rows="3"></textarea>
+        </mat-form-field>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button type="button" color="accent" (click)="_limpa()" [disabled]="_outerForm.pristine && !_tarefa">Cancelar</button>
+      <button mat-raised-button type="submit" color="primary" [disabled]="!_outerForm.valid">Gravar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<div [style.display]="_dataSource.data?.length > 0 ? 'block' : 'none'" class="app-divider"></div>
+
+<mat-card [style.display]="_dataSource.data?.length > 0 ? 'block' : 'none'">
+  <mat-card-content>
+    <div class="app-table-container">
+      <div class="app-loading-shade" *ngIf="_isLoadingResults">
+        <mat-spinner *ngIf="_isLoadingResults"></mat-spinner>
+      </div>
+      <mat-table #table [dataSource]="_dataSource" class="app-table mat-elevation-z2" matSort matSortActive="titulo"
+        matSortDisableClear matSortDirection="asc">
+
+        <!-- Coluna com o nome -->
+        <ng-container matColumnDef="titulo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true">Título</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.titulo }}</mat-cell>
+        </ng-container>
+
+        <!-- Coluna com o e-mail -->
+        <ng-container matColumnDef="descricao">
+          <mat-header-cell *matHeaderCellDef>Descrição</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.descricao }}</mat-cell>
+        </ng-container>
+
+        <!-- Coluna com os botões de editar/excluir -->
+        <ng-container matColumnDef="colunaDeOpcoes">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="_altera(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="_remove(row.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="_definicaoDasColunas"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: _definicaoDasColunas;"></mat-row>
+      </mat-table>
+      <mat-paginator [style.display]="_resultsLength > _pageSize ? 'block' : 'none'" [length]="_resultsLength"
+        [pageSize]="_pageSize">
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>

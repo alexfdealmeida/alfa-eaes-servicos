@@ -1,0 +1,12 @@
+server:
+  port: 0
+  
+eureka:
+  instance:
+    hostname: servico-mensageria-unialfa.herokuapp.com
+    secure-port-enabled: true
+    non-secure-port-enabled: false
+  client:
+    service-url:
+      defaultZone: https://eureka-unialfa.herokuapp.com/eureka/
+    healthcheck: true

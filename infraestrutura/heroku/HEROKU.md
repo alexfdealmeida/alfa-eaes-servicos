@@ -186,4 +186,40 @@ Você precisará fazer isso com todos os projetos:
 - Conta 2 do heroku:
     - service-usuarios-1: git subtree push --prefix infraestrutura/heroku/service-usuarios-1 heroku-servico-usuarios-1 master
     - service-usuarios-2: git subtree push --prefix infraestrutura/heroku/service-usuarios-2 heroku-servico-usuarios-2 master
+    - mensageria: git subtree push --prefix infraestrutura/heroku/mensageria heroku-servico-mensageria master
+
+### Quando o seu commit no heroku for rejeitado
+
+Eventualmente, você fará modificações no seu ramo local que o Git não conseguirá fundir no ramo remoto no heroku. 
+Nesse momento, você poderá usar um outro artifício para forçar a atualização remota: Você irá criar um ramo local a partir
+de um dos seus diretórios (em lugar de tentar fazer o commit dele para o ramo remoto). Por exemplo, suponha que vamos fazer
+o commit do diretório `infraestrutura/heroku/service-usuarios-1`: 
+
+```
+git subtree split --prefix infraestrutura/heroku/service-usuarios-1 -b service-usuarios-1
+```
+
+Com isso nós criamos um ramo local, chamado `service-usuarios-1` a partir do diretório `infraestrutura/heroku/service-usuarios-1`.
+Agora vamos trocar o ramo de trabalho para o ramo recém criado:
+
+```
+git checkout service-usuarios-1
+```
+
+E, por fim, vamos colocar esse ramo no heroku, com a opção `-f`, para dizer que o obojetivo não é fundir o ramo, mas subsitutir
+qualquer cois que tenha no ramo master remoto:
+
+```
+git push heroku-servico-usuarios-1 service-usuarios-1:master -f
+```
+
+Esses três passos devem ser repetidos toda vez que o heroku rejeitar o seu `push`.
+
+Ao final, volte para o ramo local original (por exemplo, master), e apague o ramo que acabou de criar:
+
+```
+git checkout master
+git branch -D service-usuarios-1
+```
+
 

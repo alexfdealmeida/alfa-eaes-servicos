@@ -1,4 +1,13 @@
-import { Component, ViewChild, AfterViewInit, OnDestroy, Output, EventEmitter, Input, ElementRef } from '@angular/core';
+import { 
+  AfterViewInit, 
+  Component, 
+  ElementRef,
+  EventEmitter, 
+  Input, 
+  OnDestroy, 
+  Output, 
+  ViewChild, 
+} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import {
   MatTableDataSource,
@@ -17,6 +26,7 @@ import {
   startWith,
   switchMap
 } from 'rxjs/operators';
+import { Subject } from 'rxjs/Subject';
 
 import { AlocacaoDeTarefasService } from '../../core/servicos/alocacao-de-tarefas.service';
 

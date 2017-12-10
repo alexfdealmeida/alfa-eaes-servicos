@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.unialfa.pos.soa.rest.core.model.entity.Usuario;
+import br.com.unialfa.pos.soa.rest.core.model.feign.MensageriaFeign;
 import br.com.unialfa.pos.soa.rest.core.model.repository.UsuarioRepository;
+import br.com.unialfa.pos.soa.rest.core.model.to.UsuarioChangedMessageTo;
 import br.com.unialfa.pos.soa.rest.service.UsuarioService;
 
 @Service
@@ -17,6 +19,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Autowired
 	UsuarioRepository usuarioRepository;
+
+	@Autowired
+	MensageriaFeign mensageriaFeign;
 
 	@Override
 	public Page<Usuario> obtemTodosOsUsuarios(Pageable pageable) {
@@ -26,7 +31,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return usuarios;
 
 	}
-	
+
 	@Override
 	public List<Usuario> obtemTodosOsUsuariosByIdIn(List<Long> ids) {
 		List<Usuario> usuarios = this.usuarioRepository.findByIdIn(ids);
@@ -37,6 +42,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public Usuario gravaUsuario(Usuario usuario) {
 		usuario = this.usuarioRepository.save(usuario);
+
+		UsuarioChangedMessageTo to = UsuarioChangedMessageTo.builder().isRemoved(false).build();
+
+		this.mensageriaFeign.comunicaMudancaDeUsuario(to);
+
 		return usuario;
 	}
 
@@ -44,6 +54,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Transactional
 	public void removeUsuario(Long id) {
 		this.usuarioRepository.delete(id);
+
+		UsuarioChangedMessageTo to = UsuarioChangedMessageTo.builder().isRemoved(false).build();
+
+		this.mensageriaFeign.comunicaMudancaDeUsuario(to);
 	}
 
 	@Override
