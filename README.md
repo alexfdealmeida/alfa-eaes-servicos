@@ -54,11 +54,11 @@ a funcionalidade de segurança depende muito da arquitetura adodata em cada caso
 de textos e vídeos que coloquei aqui devem ser encarados apenas como peças para se construir uma
 solução completa.
 
-### Backend (Spring)
+### Segurança no Backend (Spring)
 
 1. [Spring Security (Vídeo da Algaworks)](https://www.youtube.com/watch?v=FOX0r52_hwE)
 
-### Frontend (No projeto @angular)
+### Segurança no Frontend (No projeto @angular)
 
 1. [Route Guards](https://angular.io/guide/router#milestone-5-route-guards)
 
