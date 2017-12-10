@@ -179,3 +179,11 @@ implementada e este é o seu desafio. Veja como é a API RestFul:
 Escolha um dos "serviços" da atividade 1 e implemente o nível 3 de maturidade de Richardson
 em todos os serviços
 
+### Atividade 3: Sincronização da base de dados
+
+Infelizmente você encontra-se sem recursos para um plano pago no Heroku e não sabe quando terá recursos
+para mudar este cenário. Porém, mesmo sem recursos, faz questão de manter a disponibilidade do seu serviço
+de usuários usando redundância. Porém, como o plano gratuit do heroku não te permite compartilhar a base
+de dados no PostgreSQL, você irá apelar para a estrutura de mensageria para manter as bases de dados
+de ambos os serviços sincronizadas. Toda vez que um usuário novo for criado, ele deverá ser colocado
+na fila de mensagens para que os demais serviços de usuário possam se sincronizar.
