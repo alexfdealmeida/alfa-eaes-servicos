@@ -75,6 +75,11 @@ A arquitetura que se almeja pode ser vista no gif animado a seguir:
 arquitetura. Porém o cadeado na figura acima é um bom começo para se pensar em um projeto de segurança
 integrado ao Springcloud, eventualmente com o uso do Spring Security Oauth2.
 
+### A mensageria
+
+No diretório [com-mensageria](com-mensageria/README.md) você pode encontrar a mesma estrutura com a adição de um serviço de mensageria
+para manter os usuários dos clientes sincronizados.
+
 ## Pontos de interesse
 
 - O conjunto não está completo: existe <a href="#atividades">atividade para você fazer</a>
