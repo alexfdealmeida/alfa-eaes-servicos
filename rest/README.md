@@ -25,7 +25,7 @@ Angular:
 
 ```
 Se descobrir que o `angular-cli` não está instalado, execute, na linha de comando: 
-`npm install -g angular-cli`
+`npm install -g @angular-cli`
 
 Observação: existe um bug na versão 16.0.4 do Ubuntu que pode causar erros no processo de
 instalação do `angular-cli` e execução do projeto Angular. Se perceber que isso está acontecendo
