@@ -39,9 +39,10 @@ Esse arquivo é lido e interpretado pelo `npm` (_nodejs package manager_) É alg
 java.
 
 Para que o `npm` faça o download das dependências necessárias: **de dentro do diretório do projeto 
-Angular**, digite `npm install` na janela de um terminal. Cerca de 100MB de dependências serão incorporados
-ao seu projeto Angular (portanto o download pode demorar um pouco: não faça isso usando a rede dados do
-seu celular).
+Angular**, apague o arquivo `package-lock.json`, se existir, e depois digite `npm install` na janela 
+de um terminal (**tenha certeza de que esse terminal te dê a opção de executar os comandos como 
+administrador**). Cerca de 100MB de dependências serão incorporados ao seu projeto Angular (portanto 
+o download pode demorar um pouco: não faça isso usando a rede dados do seu celular).
 
 ### Executando o projeto Angular
 
