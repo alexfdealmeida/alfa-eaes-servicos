@@ -24,8 +24,8 @@ Angular:
 ...
 
 ```
-Se descobrir que o `angular-cli` não está instalado, execute, na linha de comando: 
-`npm install -g angular-cli`
+Se descobrir que o `angular-cli` não está instalado, execute, na linha de comando (com permissões
+de administrador): `npm install -g @angular-cli`
 
 Observação: existe um bug na versão 16.0.4 do Ubuntu que pode causar erros no processo de
 instalação do `angular-cli` e execução do projeto Angular. Se perceber que isso está acontecendo
@@ -38,10 +38,15 @@ que traz as informações das dependências (biblitecas) necessárias para o pro
 Esse arquivo é lido e interpretado pelo `npm` (_nodejs package manager_) É algo como o `Maven` no mundo 
 java.
 
-Para que o `npm` faça o download das dependências necessárias: **de dentro do diretório do projeto 
-Angular**, digite `npm install` na janela de um terminal. Cerca de 100MB de dependências serão incorporados
-ao seu projeto Angular (portanto o download pode demorar um pouco: não faça isso usando a rede dados do
-seu celular).
+Para que o `npm` faça o download das dependências necessárias, da janela de um terminal: 
+1. Tenha certeza de ter permissões de administrador na janeja do terminal, caso contrário não
+conseguirá executar os comandos seugintes com sucesso.
+2. **de dentro do diretório do projeto Angular**, apague o arquivo `package-lock.json`, se existir
+3. Digite `npm install` (**tenha certeza de que esse terminal te dê a opção de executar os comandos como 
+administrador**). 
+
+Cerca de 100MB de dependências serão incorporados ao seu projeto Angular (portanto 
+o download pode demorar um pouco: não faça isso usando a rede dados do seu celular).
 
 ### Executando o projeto Angular
 
