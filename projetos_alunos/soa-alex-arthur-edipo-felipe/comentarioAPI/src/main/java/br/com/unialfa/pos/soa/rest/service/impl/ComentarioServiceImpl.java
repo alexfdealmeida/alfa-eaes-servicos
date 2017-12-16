@@ -43,8 +43,8 @@ public class ComentarioServiceImpl implements ComentarioService {
 	@Transactional
 	public void removeComentario(Long id) {
 		
-		List<Comentario> comentarios = this.comentarioRepository.findByAutorId(id);
-		this.comentarioRepository.delete(comentarios);
+		Comentario comentario = this.comentarioRepository.findOne(id);
+		this.comentarioRepository.delete(comentario);
 		
 	}
 
