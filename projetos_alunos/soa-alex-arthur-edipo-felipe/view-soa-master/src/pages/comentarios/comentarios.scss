@@ -1,0 +1,18 @@
+page-comentarios {
+    .ion-ios-chatboxes{
+        color: orange;
+        margin-left: 20px !important;
+        cursor: pointer;
+    }
+    .input-wrapper{
+        display: block;
+    }
+    .quantidade-comentarios{
+        margin: 0;
+        margin-left: 10px;
+        font-size: 0.8em;
+    }
+    .item-icon{
+        display: flex;
+    }
+}

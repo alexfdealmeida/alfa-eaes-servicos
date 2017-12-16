@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Aluno</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-avatar class="avatar-aluno">
+    <img src="assets/imgs/sem_foto.png">
+  </ion-avatar>
+
+  <ion-item>
+    <ion-label floating> Nome </ion-label>
+    <ion-input [(ngModel)]="aluno.Nome" id="nome" autofocus required> </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating> Email </ion-label>
+    <ion-input [(ngModel)]="aluno.Curso"> </ion-input>
+  </ion-item>
+
+</ion-content>
+
+<ion-footer>
+  <div padding class="barra-ferramentas">
+    <button ion-button color="light" (click)="cancelar()">Cancelar</button>
+    <button ion-button (click)="gravar()">Gravar</button>
+  </div>
+</ion-footer>

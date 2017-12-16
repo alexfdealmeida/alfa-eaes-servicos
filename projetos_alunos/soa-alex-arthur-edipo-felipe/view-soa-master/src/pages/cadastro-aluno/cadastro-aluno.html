@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Alunos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item *ngFor="let aluno of alunos">
+      <ion-icon name="md-school" item-start></ion-icon>
+      {{aluno.Nome}}
+      <ion-icon name="md-create" item-end title="Editar" (click)="editar(aluno)"></ion-icon>
+      <ion-icon name="md-trash" item-end title="Excluir" (click)="excluir(aluno)"></ion-icon>
+    </button>
+  </ion-list>
+
+  <ion-fab right bottom (click)="adicionarAluno()">
+    <button ion-fab color="secondary">
+      <ion-icon name="md-add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

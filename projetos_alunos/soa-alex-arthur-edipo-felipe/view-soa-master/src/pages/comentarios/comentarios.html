@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Comentários</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item *ngFor="let tarefa of tarefas">
+      <ion-icon name="md-copy" item-start></ion-icon>
+
+      <ion-label>{{tarefa.Titulo}}</ion-label>
+
+      <ion-icon name="ios-chatboxes" item-end title="Comentários" (click)="comentar(tarefa)">
+        <ion-label class="quantidade-comentarios">{{obtenhaQuantidadeDeComentariosDaTarefa(tarefa)}}</ion-label>
+      </ion-icon>
+
+    </button>
+  </ion-list>
+
+</ion-content>

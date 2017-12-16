@@ -1,0 +1,48 @@
+.tabs-md .tabbar {
+    background: #e6e6e6;
+}
+.modal-aluno .modal-wrapper{
+    height: 400px !important;
+}
+.modal-tarefa .modal-wrapper{
+    height: 450px !important;
+}
+.modal-alocacoes .modal-wrapper{
+    height: 300px !important;
+}
+.toast-alerta {
+    .toast-message {
+        background-color: #FB8C00;
+    }
+}
+.toast-sucesso {
+    .toast-message {
+        background-color: #689F38;
+    }
+}
+.toast-info {
+    .toast-message {
+        background-color: rgb(5, 139, 201);
+    }
+}
+.toolbar-background{
+    background: #e6e6e6;
+}
+.toolbar-background {
+    background: #488aff;
+}
+.toolbar-title-md{
+    color: white;
+}
+.label{
+    color:gray;
+}
+.back-button{
+    color: white;
+}
+.action-sheet-group{
+    overflow: auto;
+}
+.scroll-content{
+    overflow: auto;
+}

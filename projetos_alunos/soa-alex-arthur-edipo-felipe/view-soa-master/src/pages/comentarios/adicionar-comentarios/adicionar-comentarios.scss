@@ -1,0 +1,48 @@
+page-adicionar-comentarios {
+    .comentarios{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .card-content-md {
+        padding-bottom: 1px;
+    }
+    .item-md p {
+        font-size: 1.2rem;
+    }
+    .botao-comentar{
+        color: #fff;
+        background-color: #28a745;
+        background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+    }
+    .button-md{
+        text-transform: initial;
+    }
+    .item-button{
+        height: 35px !important;
+        width: 88px;
+        font-size: 1.4rem !important;
+    }
+    .campo-comentario{
+        width: 100%;
+        border-color: #dad7d7;
+    }
+    .nav-novo-comentario .toolbar-background{
+         height: 40px;
+    }
+    .titulo-novo-comentario {
+        div{
+            font-size: 1.5rem;
+        }
+        .toolbar-title{
+            margin-top: -15px !important;
+        }
+    }
+    .scroll-content{
+        background-color: #eaeaea;
+    }
+    .ion-md-trash{
+        color: #EF5350;
+        margin-left: 20px !important;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{tarefa.Titulo}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div class="comentarios">
+
+    <ion-card *ngFor="let comentario of comentarios">
+
+      <ion-item>
+          <ion-icon name="md-trash" item-end title="Excluir" (click)="excluir(comentario)"></ion-icon>
+        <ion-avatar item-start>
+          <img src="assets/imgs/sem_foto.png">
+        </ion-avatar>
+        <h2>{{comentario.Aluno.Nome}}</h2>
+      </ion-item>
+
+      <ion-card-content>
+        <p>{{comentario.Comentario}}</p>
+      </ion-card-content>
+
+      <ion-item>
+        <p item-end>{{comentario.Data | data}}</p>
+      </ion-item>
+
+    </ion-card>
+
+    <ion-card>
+
+      <ion-navbar class="nav-novo-comentario">
+        <ion-title class="titulo-novo-comentario">Novo comentário</ion-title>
+      </ion-navbar>
+
+      <ion-item>
+        <ion-label>Aluno</ion-label>
+        <ion-select [(ngModel)]="alunoSelecionado" interface='action-sheet'>
+          <ion-option *ngFor="let aluno of alunos" value="{{aluno.Id}}">{{aluno.Nome}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-card-content>
+        <textarea class="campo-comentario" rows="5" [(ngModel)]="comentarioTexto"></textarea>
+      </ion-card-content>
+
+      <ion-item>
+        <button class="botao-comentar" item-end ion-button color="secondary" (click)="comentar()">Comentar</button>
+      </ion-item>
+
+    </ion-card>
+  </div>
+
+</ion-content>

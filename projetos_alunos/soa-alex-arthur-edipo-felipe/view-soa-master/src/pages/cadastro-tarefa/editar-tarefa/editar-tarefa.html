@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Tarefa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating> Título </ion-label>
+    <ion-input [(ngModel)]="tarefa.Titulo" id="nome" autofocus required> </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating> Descrição </ion-label>
+    <ion-input [(ngModel)]="tarefa.Descricao"> </ion-input>
+  </ion-item>
+  <ion-item class="data">
+    <ion-label> Início </ion-label>
+    <ion-input [(ngModel)]="inicio" placeholder="dd/mm/aaaa"> </ion-input>
+  </ion-item>
+  <ion-item class="data">
+    <ion-label> Fim </ion-label>
+    <ion-input [(ngModel)]="fim" placeholder="dd/mm/aaaa"> </ion-input>
+  </ion-item>
+
+</ion-content>
+
+<ion-footer>
+  <div padding class="barra-ferramentas">
+    <button ion-button color="light" (click)="cancelar()">Cancelar</button>
+    <button ion-button (click)="gravar()">Gravar</button>
+  </div>
+</ion-footer>

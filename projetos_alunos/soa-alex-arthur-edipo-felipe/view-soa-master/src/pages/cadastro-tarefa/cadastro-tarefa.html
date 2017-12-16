@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tarefas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item *ngFor="let tarefa of tarefas">
+      <ion-icon name="md-copy" item-start></ion-icon>
+      {{tarefa.Titulo}}
+      <ion-icon name="md-create" item-end title="Editar" (click)="editar(tarefa)"></ion-icon>
+      <ion-icon name="md-trash" item-end title="Excluir" (click)="excluir(tarefa)"></ion-icon>
+    </button>
+  </ion-list>
+
+  <ion-fab right bottom (click)="adicionarTarefa()">
+    <button ion-fab color="secondary">
+      <ion-icon name="md-add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

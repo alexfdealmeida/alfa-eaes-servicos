@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Adicionar alocação</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+
+    <ion-label>Aluno</ion-label>
+    <ion-select [(ngModel)]="alunoSelecionado" interface='action-sheet'>
+
+      <ion-option *ngFor="let aluno of alunos" value="{{aluno.Id}}">{{aluno.Nome}}</ion-option>
+
+    </ion-select>
+
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label>Tarefa</ion-label>
+    <ion-select [(ngModel)]="tarefaSelecionada" interface='action-sheet'>
+
+      <ion-option *ngFor="let tarefa of tarefas" value="{{tarefa.Id}}">{{tarefa.Titulo}}</ion-option>
+
+    </ion-select>
+
+  </ion-item>
+
+</ion-content>
+
+<ion-footer>
+  <div padding class="barra-ferramentas">
+    <button ion-button color="light" (click)="cancelar()">Cancelar</button>
+    <button ion-button (click)="gravar()">Gravar</button>
+  </div>
+</ion-footer>

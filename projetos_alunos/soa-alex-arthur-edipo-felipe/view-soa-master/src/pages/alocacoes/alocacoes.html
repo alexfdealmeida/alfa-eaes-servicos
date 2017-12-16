@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Alocações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item *ngFor="let alocacao of alocacoes">
+      <ion-icon name="ios-link" item-start></ion-icon>
+
+      <ion-label>{{alocacao.Aluno.Nome}}</ion-label>
+      <ion-label>{{alocacao.Tarefa.Titulo}}</ion-label>
+
+      <ion-icon name="md-trash" item-end title="Excluir" (click)="excluir(alocacao)"></ion-icon>
+    </button>
+  </ion-list>
+
+  <ion-fab right bottom (click)="adicionarAlocacao()">
+    <button ion-fab color="secondary">
+      <ion-icon name="md-add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
