@@ -1,0 +1,13 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\bin\Release\netcoreapp2.0\Tarefa.Infra.Data.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\bin\Release\netcoreapp2.0\Tarefa.Infra.Data.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\bin\Release\netcoreapp2.0\Tarefa.Infra.Data.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\bin\Release\netcoreapp2.0\Tarefa.Domain.Core.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\bin\Release\netcoreapp2.0\Tarefa.Domain.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\bin\Release\netcoreapp2.0\Tarefa.Domain.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\bin\Release\netcoreapp2.0\Tarefa.Domain.Core.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\obj\Release\netcoreapp2.0\Tarefa.Infra.Data.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\obj\Release\netcoreapp2.0\Tarefa.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\obj\Release\netcoreapp2.0\Tarefa.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\obj\Release\netcoreapp2.0\Tarefa.Infra.Data.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\obj\Release\netcoreapp2.0\Tarefa.Infra.Data.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.Data\obj\Release\netcoreapp2.0\Tarefa.Infra.Data.pdb

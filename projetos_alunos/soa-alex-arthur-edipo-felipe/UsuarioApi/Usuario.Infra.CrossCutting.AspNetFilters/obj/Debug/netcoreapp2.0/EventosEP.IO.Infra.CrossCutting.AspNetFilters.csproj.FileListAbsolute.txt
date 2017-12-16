@@ -1,0 +1,9 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.CrossCutting.AspNetFilters\bin\Debug\netcoreapp2.0\EventosEP.IO.Infra.CrossCutting.AspNetFilters.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.CrossCutting.AspNetFilters\bin\Debug\netcoreapp2.0\EventosEP.IO.Infra.CrossCutting.AspNetFilters.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.CrossCutting.AspNetFilters\bin\Debug\netcoreapp2.0\EventosEP.IO.Infra.CrossCutting.AspNetFilters.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.CrossCutting.AspNetFilters.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.CrossCutting.AspNetFilters.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.CrossCutting.AspNetFilters.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.CrossCutting.AspNetFilters.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.CrossCutting.AspNetFilters.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.CrossCutting.AspNetFilters.pdb

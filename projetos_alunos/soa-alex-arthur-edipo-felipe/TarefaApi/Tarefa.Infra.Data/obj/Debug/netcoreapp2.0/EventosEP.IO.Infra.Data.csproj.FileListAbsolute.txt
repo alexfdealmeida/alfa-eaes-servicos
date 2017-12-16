@@ -1,0 +1,13 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\bin\Debug\netcoreapp2.0\EventosEP.IO.Infra.Data.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\bin\Debug\netcoreapp2.0\EventosEP.IO.Infra.Data.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\bin\Debug\netcoreapp2.0\EventosEP.IO.Infra.Data.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\bin\Debug\netcoreapp2.0\EventosEP.IO.Domain.Core.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\bin\Debug\netcoreapp2.0\EventosEP.IO.Domain.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\bin\Debug\netcoreapp2.0\EventosEP.IO.Domain.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\bin\Debug\netcoreapp2.0\EventosEP.IO.Domain.Core.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.Data.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.Data.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.Data.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\EventosEP\EventosEP.IO.Infra.Data\obj\Debug\netcoreapp2.0\EventosEP.IO.Infra.Data.pdb

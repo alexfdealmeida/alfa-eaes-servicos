@@ -1,0 +1,9 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.AspNetFilters\bin\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.AspNetFilters.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.AspNetFilters\bin\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.AspNetFilters.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.AspNetFilters\bin\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.AspNetFilters.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.AspNetFilters\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.AspNetFilters.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.AspNetFilters\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.AspNetFilters.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.AspNetFilters\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.AspNetFilters.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.AspNetFilters\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.AspNetFilters.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.AspNetFilters\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.AspNetFilters.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.AspNetFilters\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.AspNetFilters.pdb

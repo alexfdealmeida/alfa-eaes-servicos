@@ -1,0 +1,5 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Services.Api
+--output-path=obj\Any CPU\Release\netcoreapp2.0\
+--application-name=Tarefa.Services.Api
+--content-root=C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Services.Api
+--file=

@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Usuario.Services.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Usuario.Services.Api.AutoMapper.AutoMapperConfiguration">
+            <summary>
+            Configuraçao AutoMapper
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.AutoMapper.AutoMapperConfiguration.RegisterMappings">
+            <summary>
+            Registra mapeamentos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Usuario.Services.Api.AutoMapper.DomainToViewModelMappingProfile">
+            <summary>
+            Converte Domínio para Modelo de visão
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.AutoMapper.DomainToViewModelMappingProfile.#ctor">
+            <summary>
+            Mapeamento
+            </summary>
+        </member>
+        <member name="T:Usuario.Services.Api.AutoMapper.ViewModelToDomainMappingProfile">
+            <summary>
+            Converte Modelo de visão para Domínio
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.AutoMapper.ViewModelToDomainMappingProfile.#ctor">
+            <summary>
+            Mapeamento
+            </summary>
+        </member>
+        <member name="T:Usuario.Services.Api.Configurations.RouteConvention">
+            <summary>
+            Convenção de rotas
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.Configurations.RouteConvention.#ctor(Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="routeTemplateProvider"></param>
+        </member>
+        <member name="M:Usuario.Services.Api.Configurations.RouteConvention.Apply(Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel)">
+            <summary>
+            Aplica alteração
+            </summary>
+            <param name="application"></param>
+        </member>
+        <member name="T:Usuario.Services.Api.Configurations.MvcOptionsExtensions">
+            <summary>
+            Extensão MVC Options
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.Configurations.MvcOptionsExtensions.UseCentralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Método de utlização de prefíxo de rotas
+            </summary>
+            <param name="opts"></param>
+            <param name="routeAttribute"></param>
+        </member>
+        <member name="T:Usuario.Services.Api.Controllers.BaseController">
+            <summary>
+            Controlador padrão, com validações padrões
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.BaseController.#ctor(MediatR.INotificationHandler{Usuario.Domain.Core.Notifications.DomainNotification},Usuario.Domain.Interfaces.IMediatorHandler)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="notifications">Passado por injeção de dependência</param>
+            <param name="mediator">Passado por injeção de dependência</param>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.BaseController.Response(System.Object)">
+            <summary>
+            Resposta de uma requisiçao
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.BaseController.OperacaoValida">
+            <summary>
+            Verifica se existe alguma notificação
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.BaseController.NotificarErroModelInvalida">
+            <summary>
+            Erro de model inválida
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.BaseController.NotificarErro(System.String,System.String)">
+            <summary>
+            Publica erro capturado
+            </summary>
+            <param name="codigo">Código do erro</param>
+            <param name="mensagem">Mensagem de erro</param>
+        </member>
+        <member name="T:Usuario.Services.Api.Controllers.UsuariosController">
+            <summary>
+            Controller de Usuários
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.UsuariosController.#ctor(MediatR.INotificationHandler{Usuario.Domain.Core.Notifications.DomainNotification},Usuario.Domain.Entities.Usuarios.Repository.IUsuarioRepository,AutoMapper.IMapper,Usuario.Domain.Interfaces.IMediatorHandler)">
+            <summary>
+            Construtor do controller Usuarios
+            </summary>
+            <param name="notifications">Passado por injeção de dependência</param>
+            <param name="usuarioRepository">Passado por injeção de dependência</param>
+            <param name="mapper">Passado por injeção de dependência</param>
+            <param name="mediator">Passado por injeção de dependência</param>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.UsuariosController.Get">
+            <summary>
+            Obter todos usuários
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.UsuariosController.Get(System.Int64)">
+            <summary>
+            Obter usuário por ID
+            </summary>
+            <param name="id">Campo chave</param>
+            <returns></returns>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.UsuariosController.Post(Usuario.Services.Api.ViewModels.UsuarioViewModel)">
+            <summary>
+            Adicionar usuário
+            </summary>
+            <param name="usuarioViewModel">Modelo usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.UsuariosController.Put(Usuario.Services.Api.ViewModels.UsuarioViewModel)">
+            <summary>
+            Atualizar usuário
+            </summary>
+            <param name="usuarioViewModel">Modelo usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:Usuario.Services.Api.Controllers.UsuariosController.Delete(System.Int64)">
+            <summary>
+            Remover usuário
+            </summary>
+            <param name="id">Campo chave</param>
+            <returns></returns>
+        </member>
+        <member name="T:Usuario.Services.Api.Middlewares.SwaggerMiddleware">
+            <summary>
+            Middleware Custom do Swagger
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.Middlewares.SwaggerMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:Usuario.Services.Api.Middlewares.SwaggerMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Chamada
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Usuario.Services.Api.Middlewares.SwaggerMiddlewareExtensions">
+            <summary>
+            Extensão do Swagger Middleware
+            </summary>
+        </member>
+        <member name="T:Usuario.Services.Api.Program">
+            <summary>
+            WEB API
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.Program.Main(System.String[])">
+            <summary>
+            Inicio da aplicação
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Usuario.Services.Api.Program.BuildWebHost(System.String[])">
+            <summary>
+            Configuração padrão
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Usuario.Services.Api.ViewModels.UsuarioViewModel">
+            <summary>
+            Modelo classe usuário
+            </summary>
+        </member>
+        <member name="M:Usuario.Services.Api.ViewModels.UsuarioViewModel.#ctor">
+            <summary>
+            Construtor que passa por default Id = 0
+            </summary>
+        </member>
+        <member name="P:Usuario.Services.Api.ViewModels.UsuarioViewModel.Id">
+            <summary>
+            Campo chave
+            </summary>
+        </member>
+        <member name="P:Usuario.Services.Api.ViewModels.UsuarioViewModel.Nome">
+            <summary>
+            Propriedade Nome do usuário - Requerido, entre 2 e 255 caracteres
+            </summary>
+        </member>
+        <member name="P:Usuario.Services.Api.ViewModels.UsuarioViewModel.Email">
+            <summary>
+            Propriedade E-mail, 
+            </summary>
+        </member>
+    </members>
+</doc>

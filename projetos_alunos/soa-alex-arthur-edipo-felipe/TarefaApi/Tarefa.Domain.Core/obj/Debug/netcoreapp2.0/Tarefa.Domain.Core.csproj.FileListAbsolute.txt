@@ -1,0 +1,17 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\UsuarioApi\Usuario.Domain.Core\bin\Debug\netcoreapp2.0\Usuario.Domain.Core.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\UsuarioApi\Usuario.Domain.Core\bin\Debug\netcoreapp2.0\Usuario.Domain.Core.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\UsuarioApi\Usuario.Domain.Core\bin\Debug\netcoreapp2.0\Usuario.Domain.Core.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\UsuarioApi\Usuario.Domain.Core\obj\Debug\netcoreapp2.0\Usuario.Domain.Core.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\UsuarioApi\Usuario.Domain.Core\obj\Debug\netcoreapp2.0\Usuario.Domain.Core.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\UsuarioApi\Usuario.Domain.Core\obj\Debug\netcoreapp2.0\Usuario.Domain.Core.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\UsuarioApi\Usuario.Domain.Core\obj\Debug\netcoreapp2.0\Usuario.Domain.Core.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\UsuarioApi\Usuario.Domain.Core\obj\Debug\netcoreapp2.0\Usuario.Domain.Core.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\UsuarioApi\Usuario.Domain.Core\obj\Debug\netcoreapp2.0\Usuario.Domain.Core.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\TarefaApi\Tarefa.Domain.Core\bin\Debug\netcoreapp2.0\Tarefa.Domain.Core.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\TarefaApi\Tarefa.Domain.Core\bin\Debug\netcoreapp2.0\Tarefa.Domain.Core.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\TarefaApi\Tarefa.Domain.Core\bin\Debug\netcoreapp2.0\Tarefa.Domain.Core.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\TarefaApi\Tarefa.Domain.Core\obj\Debug\netcoreapp2.0\Tarefa.Domain.Core.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\TarefaApi\Tarefa.Domain.Core\obj\Debug\netcoreapp2.0\Tarefa.Domain.Core.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\TarefaApi\Tarefa.Domain.Core\obj\Debug\netcoreapp2.0\Tarefa.Domain.Core.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\TarefaApi\Tarefa.Domain.Core\obj\Debug\netcoreapp2.0\Tarefa.Domain.Core.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\TarefaApi\Tarefa.Domain.Core\obj\Debug\netcoreapp2.0\Tarefa.Domain.Core.pdb

@@ -1,0 +1,13 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.Identity.deps.json
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.Identity.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.Identity.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\Tarefa.Domain.Core.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\Tarefa.Domain.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\Tarefa.Domain.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\bin\Release\netcoreapp2.0\Tarefa.Domain.Core.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.Identity.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.Identity.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.Identity.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.Identity.AssemblyInfo.cs
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.Identity.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\Deploy\TarefaApi\Tarefa.Infra.CrossCutting.Identity\obj\Release\netcoreapp2.0\Tarefa.Infra.CrossCutting.Identity.pdb
