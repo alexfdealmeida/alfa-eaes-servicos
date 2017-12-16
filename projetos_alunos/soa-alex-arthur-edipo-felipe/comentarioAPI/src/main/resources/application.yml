@@ -1,0 +1,14 @@
+server:
+  port: 9000
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  datasource:
+    url: jdbc:mysql://servicedb.ccut3bbadl7p.us-east-1.rds.amazonaws.com:3306/servicedb?createDatabaseIfNotExist=true
+    username: usuario
+    password: ejc379503
+    driver-class-name: com.mysql.jdbc.Driver    
